@@ -8,25 +8,41 @@ public class NPC : MonoBehaviour
 
 {
 
+  [Header("NPC idendity")]
+  public string npcName;
+  public Image npcAvatar;
+
+  [Header("NPC Layout")]
+  public Text displayName;
+  public Sprite npcSprite;
   public GameObject dialoguePanel;
   public Text dialogueText;
+  public GameObject HintDialogueKey;
+
+  [Header("NPC Settings")]
   public string[] dialogue;
-  private int index = 0;
   public float wordSpeed;
   public bool playerIsClose;
+
+  private int index = 0;
 
   void Start()
 
   {
     dialogueText.text = "";
+    HintDialogueKey.SetActive(false);
   }
 
   // Update is called once per frame
 
   void Update() {
+
     if (Keyboard.current.eKey.wasPressedThisFrame && playerIsClose) {
       if (!dialoguePanel.activeInHierarchy) {
         dialoguePanel.SetActive(true);
+        HintDialogueKey.SetActive(false);
+        displayName.text = npcName;
+        npcAvatar.sprite = npcSprite;
         StartCoroutine(Typing());
       } else if (dialogueText.text == dialogue[index]) {
         NextLine();
@@ -36,6 +52,7 @@ public class NPC : MonoBehaviour
     if (Keyboard.current.qKey.wasPressedThisFrame &&
         dialoguePanel.activeInHierarchy) {
       RemoveText();
+      HintDialogueKey.SetActive(true);
     }
   }
 
@@ -71,11 +88,13 @@ public class NPC : MonoBehaviour
   {
     playerIsClose = true;
     Debug.Log("Player entered trigger!");
+    HintDialogueKey.SetActive(true);
   }
 
   private void OnTriggerExit2D(Collider2D other) {
     playerIsClose = false;
     Debug.Log("Player exit trigger!");
     RemoveText();
+    HintDialogueKey.SetActive(false);
   }
 }
