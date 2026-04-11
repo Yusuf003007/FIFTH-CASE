@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem; // for player key press
-
+// https://www.youtube.com/watch?v=1nFNOyCalzo
 public class NPC : MonoBehaviour
 
 {

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// https://www.youtube.com/watch?v=FXqwunFQuao
 public class CameraFollow : MonoBehaviour {
   public float FollowSpeed = 2f;
   public float yOffset = 1f;
