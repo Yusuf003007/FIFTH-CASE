@@ -6,8 +6,7 @@ public class Level1Controller : MonoBehaviour
   public NPCDialogueController npc1;
   public NPCDialogueController npc2;
 
-  void Start() { // ChangeAllDialogues();
-  }
+  void Start() { ChangeAllDialogues(); }
 
   public void ChangeAllDialogues() {
     npc1.SetDialogue(new string[] { "Hi, I'm NPC 1!", "My dialogue changed!" });
