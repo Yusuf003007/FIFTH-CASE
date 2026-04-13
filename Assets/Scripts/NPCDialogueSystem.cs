@@ -25,6 +25,7 @@ public class NPCDialogueController : MonoBehaviour
   public bool playerIsClose = true;
 
   private int index = 0;
+  public int state = 0;
 
   void Start()
 
@@ -60,6 +61,7 @@ public class NPCDialogueController : MonoBehaviour
     index = 0;
     dialoguePanel.SetActive(false);
     HintDialogueKey.SetActive(true);
+    state++; // NPC progresses to next state
   }
 
   public void SetDialogue(string[] newDialogue) {

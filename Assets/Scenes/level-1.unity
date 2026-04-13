@@ -894,7 +894,8 @@ MonoBehaviour:
   - I like cheese, please give me some
   - 'and you will get a rewards in return '
   wordSpeed: 0
-  playerIsClose: 1
+  playerIsClose: 0
+  state: 0
 --- !u!1 &404662812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,7 +1775,8 @@ MonoBehaviour:
   - Salut c'est moi Larry ! le chat malveillant
   - I'm the good kitty nemesis and I'M GOING to DESTROY THE UNIVERSE !!!!!
   wordSpeed: 0
-  playerIsClose: 1
+  playerIsClose: 0
+  state: 0
 --- !u!70 &727355463
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
