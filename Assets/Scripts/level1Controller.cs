@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class Level1Controller : MonoBehaviour
+public class level1Controller : MonoBehaviour
 
 {
-  public NPCDialogueController npc1;
-  public NPCDialogueController npc2;
+  public npcDialogueController npc1;
+  public npcDialogueController npc2;
 
   void Start() {
     ChangeAllDialogues();
     InvokeRepeating("PrintState", 10f, 10f);
   }
-
   public void ChangeAllDialogues() {
     npc1.SetDialogue(new string[] { "Hi, I'm NPC 1!", "My dialogue changed!" });
 

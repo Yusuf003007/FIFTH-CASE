@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem; // for player key press
 // https://www.youtube.com/watch?v=1nFNOyCalzo
-public class NPCDialogueController : MonoBehaviour
+public class npcDialogueController : MonoBehaviour
 
 {
 
@@ -93,13 +93,13 @@ public class NPCDialogueController : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D other) {
     playerIsClose = true;
-    /*Debug.Log("Player entered trigger!");*/
+    Debug.Log("Player entered trigger!");
     HintDialogueKey.SetActive(true);
   }
 
   private void OnTriggerExit2D(Collider2D other) {
     playerIsClose = false;
-    /*Debug.Log("Player exit trigger!");*/
+    Debug.Log("Player exit trigger!");
     RemoveText();
     HintDialogueKey.SetActive(false);
   }

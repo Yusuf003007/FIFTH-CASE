@@ -1,0 +1,89 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/134.0.6998.205 Electron/35.6.0 Safari/537.36" version="26.1.1">
+  <diagram name="Page-1" id="PwbAogSf_RBw3U_CqV1p">
+    <mxGraphModel dx="806" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-7" target="SZ1HV2CInSs_IdlOZ13Z-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="190" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-2" target="SZ1HV2CInSs_IdlOZ13Z-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-2" value="Collect small clues" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-3" target="SZ1HV2CInSs_IdlOZ13Z-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-3" value="Talk to npc Police to get hint" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-7" value="Cinematic 1" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-8" target="SZ1HV2CInSs_IdlOZ13Z-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-8" value="Talk to the Witness npc" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="810" y="150" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-10" target="SZ1HV2CInSs_IdlOZ13Z-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-10" value="Cinematic 2" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="960" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-12" value="Cinematic 3" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-15" target="SZ1HV2CInSs_IdlOZ13Z-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370.33333333333337" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-15" value="&lt;div&gt;Our main character is a detective, and the game begins with a nightmare he is having. He wakes up to the sound of a phone ringing. The caller is a police inspector at a crime scene, asking for help from his old friend. Our character agrees and heads to the scene.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="260" y="280" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-18" target="SZ1HV2CInSs_IdlOZ13Z-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n9fOUolEITiEXT3mDwRn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-18" target="SZ1HV2CInSs_IdlOZ13Z-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-18" value="After arriving, he first talks to the inspector who called him and gathers the necessary information. Then control is given to the player, who starts investigating the surroundings. We find a few small clues and then collect information from other teams at the scene (such as forensics)." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="405" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-21" target="SZ1HV2CInSs_IdlOZ13Z-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-21" value="Next, we talk to the person who found the body. This person should appear nervous, as if hiding something, creating a small sense of suspicion so the player begins to suspect other characters as well." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="765" y="305" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-23" target="SZ1HV2CInSs_IdlOZ13Z-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-23" value="Afterwards, we go to a quiet place to evaluate the clues. While the main character is smoking (in this scene, the camera slightly zooms in and calm music plays), we see another detective. However, this figure is imaginary and can only be seen by our character." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="900" y="425" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-25" target="SZ1HV2CInSs_IdlOZ13Z-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-25" value="A short conversation takes place between them, filled with sharp and witty dialogue. The player reviews the collected clues and notices something important related to a clue, but cannot fully understand or connect the pieces. Then, the first chapter ends." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="295" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-27" target="SZ1HV2CInSs_IdlOZ13Z-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SZ1HV2CInSs_IdlOZ13Z-27" value="&lt;div&gt;NIGHTMARE:&lt;/div&gt;&lt;div&gt;The main character is chasing someone. The person’s face is not visible, and they are holding a gun. The environment is dark. Our character shouts “Stop! Surrender!” from behind, and the scene cuts. Then we wake up.&quot;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="260" y="580" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="n9fOUolEITiEXT3mDwRn-2" value="3 policeman&lt;div&gt;1 withness&lt;/div&gt;&lt;div&gt;2 inspector&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="630" y="570" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
