@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem; // for player key press
-// https://www.youtube.com/watch?v=1nFNOyCalzo
-public class npcDialogueController : MonoBehaviour
+using UnityEngine.InputSystem;
 
-{
+[System.Serializable]
+public class DialogueLine {
+  public string speakerName;
+  public Sprite speakerAvatar;
+  public string text;
+}
 
-  [Header("NPC idendity")]
+public class npcDialogueController : MonoBehaviour {
+  [Header("NPC identity")]
   public string npcName;
   public Sprite npcAvatar;
 
@@ -19,33 +23,27 @@ public class npcDialogueController : MonoBehaviour
   public Text dialogueText;
   public GameObject HintDialogueKey;
 
-  [Header("NPC Settings")]
-  public string[] dialogue;
+  [Header("Dialogue Settings")]
+  public DialogueLine[] dialogue;
   public float wordSpeed;
   public bool playerIsClose = true;
 
   private int index = 0;
   public bool state = false;
 
-  void Start()
-
-  {
+  void Start() {
     dialogueText.text = "";
     HintDialogueKey.SetActive(false);
   }
 
-  // Update is called once per frame
-
   void Update() {
-
     if (Keyboard.current.eKey.wasPressedThisFrame && playerIsClose) {
       if (!dialoguePanel.activeInHierarchy) {
         dialoguePanel.SetActive(true);
         HintDialogueKey.SetActive(false);
-        displayName.text = npcName;
-        displayAvatar.sprite = npcAvatar;
-        StartCoroutine(Typing(dialogue));
-      } else if (dialogueText.text == dialogue[index]) {
+
+        ShowLine();
+      } else if (dialogueText.text == dialogue[index].text) {
         NextLine();
       }
     }
@@ -56,7 +54,41 @@ public class npcDialogueController : MonoBehaviour
     }
   }
 
+  void ShowLine() {
+    dialogueText.text = "";
+
+    displayName.text = dialogue[index].speakerName;
+    displayAvatar.sprite = dialogue[index].speakerAvatar;
+
+    // Optional: align text depending on speaker
+    if (dialogue[index].speakerName == "Player") {
+      dialogueText.alignment = TextAnchor.MiddleRight;
+    } else {
+      dialogueText.alignment = TextAnchor.MiddleLeft;
+    }
+
+    StopAllCoroutines();
+    StartCoroutine(Typing());
+  }
+
+  IEnumerator Typing() {
+    foreach (char letter in dialogue[index].text.ToCharArray()) {
+      dialogueText.text += letter;
+      yield return new WaitForSeconds(wordSpeed);
+    }
+  }
+
+  public void NextLine() {
+    if (index < dialogue.Length - 1) {
+      index++;
+      ShowLine();
+    } else {
+      RemoveText();
+    }
+  }
+
   public void RemoveText() {
+    StopAllCoroutines();
     dialogueText.text = "";
     index = 0;
     dialoguePanel.SetActive(false);
@@ -64,42 +96,20 @@ public class npcDialogueController : MonoBehaviour
     state = true;
   }
 
-  public void SetDialogue(string[] newDialogue) {
+  public void SetDialogue(DialogueLine[] newDialogue) {
     StopAllCoroutines();
     dialogue = newDialogue;
     index = 0;
     dialogueText.text = "";
   }
-  IEnumerator Typing(string dialogue) {
-    foreach (char letter in dialogue[index].ToCharArray()) {
-      dialogueText.text += letter;
-      yield return new WaitForSeconds(wordSpeed);
-    }
-  }
-
-  public void NextLine() {
-    if (index < dialogue.Length - 1)
-
-    {
-      index++;
-      dialogueText.text = "";
-      StartCoroutine(Typing());
-    }
-
-    else {
-      RemoveText();
-    }
-  }
 
   private void OnTriggerEnter2D(Collider2D other) {
     playerIsClose = true;
-    // Debug.Log("Player entered trigger!");
     HintDialogueKey.SetActive(true);
   }
 
   private void OnTriggerExit2D(Collider2D other) {
     playerIsClose = false;
-    // Debug.Log("Player exit trigger!");
     RemoveText();
     HintDialogueKey.SetActive(false);
   }
