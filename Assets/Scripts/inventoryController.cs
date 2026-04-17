@@ -10,7 +10,6 @@ public class InventoryController : MonoBehaviour {
   public List<int> inventory = new List<int>();
   public GameObject Panel;
   public Text textPanel;
-  public GameObject inventoryPanelMenu;
   public Transform inventoryPanel;  // parent UI panel
   public GameObject itemSlotPrefab; // prefab with Image
 
@@ -50,7 +49,7 @@ public class InventoryController : MonoBehaviour {
     ItemData item = ItemDatabase.Instance.GetItemById(id);
 
     if (item != null) {
-      Debug.Log("Picked up: " + item.name);
+      // Debug.Log("Picked up: " + item.name);
 
       Panel.SetActive(true);
 
@@ -58,14 +57,14 @@ public class InventoryController : MonoBehaviour {
 
       StartCoroutine(HidePanelAfterDelay(3f));
     } else {
-      Debug.LogWarning("Item ID not found: " + id);
+      // Debug.LogWarning("Item ID not found: " + id);
     }
   }
 
   private IEnumerator HidePanelAfterDelay(float delay) {
-    Debug.Log("Coroutine started");
+    // Debug.Log("Coroutine started");
     yield return new WaitForSeconds(delay);
-    Debug.Log("Coroutine finished");
+    // Debug.Log("Coroutine finished");
     Panel.SetActive(false);
   }
 }

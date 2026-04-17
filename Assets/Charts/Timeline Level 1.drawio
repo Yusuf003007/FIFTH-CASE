@@ -50,7 +50,7 @@
         <mxCell id="SZ1HV2CInSs_IdlOZ13Z-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-18" target="SZ1HV2CInSs_IdlOZ13Z-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="n9fOUolEITiEXT3mDwRn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-18" target="SZ1HV2CInSs_IdlOZ13Z-3">
+        <mxCell id="n9fOUolEITiEXT3mDwRn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SZ1HV2CInSs_IdlOZ13Z-18" target="SZ1HV2CInSs_IdlOZ13Z-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="SZ1HV2CInSs_IdlOZ13Z-18" value="After arriving, he first talks to the inspector who called him and gathers the necessary information. Then control is given to the player, who starts investigating the surroundings. We find a few small clues and then collect information from other teams at the scene (such as forensics)." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -80,8 +80,17 @@
         <mxCell id="SZ1HV2CInSs_IdlOZ13Z-27" value="&lt;div&gt;NIGHTMARE:&lt;/div&gt;&lt;div&gt;The main character is chasing someone. The person’s face is not visible, and they are holding a gun. The environment is dark. Our character shouts “Stop! Surrender!” from behind, and the scene cuts. Then we wake up.&quot;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="260" y="580" width="220" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="n9fOUolEITiEXT3mDwRn-2" value="3 policeman&lt;div&gt;1 withness&lt;/div&gt;&lt;div&gt;2 inspector&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+        <mxCell id="n9fOUolEITiEXT3mDwRn-2" value="3 policeman&lt;div&gt;1 withness&lt;/div&gt;&lt;div&gt;2 inspector&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
           <mxGeometry x="630" y="570" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="N_7YIYTTOeZvxc78QOW0-1" value="Go talk to the inspector" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N_7YIYTTOeZvxc78QOW0-2" value="Collect items and policeman" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="N_7YIYTTOeZvxc78QOW0-3" value="talk to the withness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="680" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

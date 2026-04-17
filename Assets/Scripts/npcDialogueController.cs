@@ -25,7 +25,7 @@ public class npcDialogueController : MonoBehaviour
   public bool playerIsClose = true;
 
   private int index = 0;
-  public int state = 0;
+  public bool state = false;
 
   void Start()
 
@@ -44,7 +44,7 @@ public class npcDialogueController : MonoBehaviour
         HintDialogueKey.SetActive(false);
         displayName.text = npcName;
         displayAvatar.sprite = npcAvatar;
-        StartCoroutine(Typing());
+        StartCoroutine(Typing(dialogue));
       } else if (dialogueText.text == dialogue[index]) {
         NextLine();
       }
@@ -61,7 +61,7 @@ public class npcDialogueController : MonoBehaviour
     index = 0;
     dialoguePanel.SetActive(false);
     HintDialogueKey.SetActive(true);
-    state++; // NPC progresses to next state
+    state = true;
   }
 
   public void SetDialogue(string[] newDialogue) {
@@ -70,7 +70,7 @@ public class npcDialogueController : MonoBehaviour
     index = 0;
     dialogueText.text = "";
   }
-  IEnumerator Typing() {
+  IEnumerator Typing(string dialogue) {
     foreach (char letter in dialogue[index].ToCharArray()) {
       dialogueText.text += letter;
       yield return new WaitForSeconds(wordSpeed);
@@ -93,13 +93,13 @@ public class npcDialogueController : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D other) {
     playerIsClose = true;
-    Debug.Log("Player entered trigger!");
+    // Debug.Log("Player entered trigger!");
     HintDialogueKey.SetActive(true);
   }
 
   private void OnTriggerExit2D(Collider2D other) {
     playerIsClose = false;
-    Debug.Log("Player exit trigger!");
+    // Debug.Log("Player exit trigger!");
     RemoveText();
     HintDialogueKey.SetActive(false);
   }
