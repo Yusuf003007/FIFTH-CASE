@@ -577,10 +577,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
-  - Hello
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 1056274057}
 --- !u!58 &51396479
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1191,7 +1194,7 @@ Transform:
   m_GameObject: {fileID: 397846878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.53, y: 1.13, z: 0}
   m_LocalScale: {x: 0.8425, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1218,13 +1221,22 @@ MonoBehaviour:
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
-  - Hey player
-  - My name is Garry
-  - I like cheese, please give me some
-  - 'and you will get a rewards in return '
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 0}
 --- !u!1 &404662812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1859,6 @@ MonoBehaviour:
   inventory: 
   Panel: {fileID: 287280775}
   textPanel: {fileID: 181590623}
-  inventoryPanelMenu: {fileID: 0}
   inventoryPanel: {fileID: 39443801}
   itemSlotPrefab: {fileID: 1563707597}
 --- !u!4 &552337625
@@ -1955,7 +1966,7 @@ Transform:
   m_GameObject: {fileID: 617412367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.57, y: 0.32999992, z: 0}
+  m_LocalPosition: {x: 4.84, y: 0.68, z: 0}
   m_LocalScale: {x: 1.4519, y: 1.4519, z: 1.4519}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2046,10 +2057,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
-  - Hello
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 1056274057}
 --- !u!58 &617412373
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2344,7 +2358,7 @@ Transform:
   m_GameObject: {fileID: 727355456}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.110001, y: -1.7900002, z: 0}
+  m_LocalPosition: {x: 14.05, y: -2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2433,10 +2447,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
-  - Miaou ... mIaou ....
+  - speakerName: Cat
+    speakerAvatar: {fileID: 1399023219, guid: 2e651cf9d770f45f0a402657aea31862, type: 3}
+    text: Miaou, Miaou
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 1056274057}
 --- !u!70 &727355463
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3101,10 +3118,17 @@ MonoBehaviour:
   dialoguePanel: {fileID: 404662812}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
-  dialogue: []
+  dialogue:
+  - speakerName: Inspector John
+    speakerAvatar: {fileID: 1480920046, guid: 7dd1a385b576e6c48b64bdcbd9641e06, type: 3}
+    text: Hey
+  - speakerName: You
+    speakerAvatar: {fileID: 1480920046, guid: 7dd1a385b576e6c48b64bdcbd9641e06, type: 3}
+    text: no
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 1056274057}
 --- !u!70 &909926711
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3331,14 +3355,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18035d370bd9050a3ad8d927c14f1f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerName: You
+  playerAvatar: {fileID: 1480920046, guid: 7dd1a385b576e6c48b64bdcbd9641e06, type: 3}
   inspector: {fileID: 909926710}
   policeman1: {fileID: 1921603578}
   policeman2: {fileID: 1925597852}
   policeman3: {fileID: 617412372}
   witness: {fileID: 51396478}
-  cat: {fileID: 727355462}
-  questHintPanel: {fileID: 0}
-  questHintText: {fileID: 0}
+  questHintPanel: {fileID: 132694284}
+  questHintText: {fileID: 413803916}
+  questStage: 0
 --- !u!4 &1056274058
 Transform:
   m_ObjectHideFlags: 0
@@ -5996,10 +6022,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
-  - Hello
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 1056274057}
 --- !u!70 &1921603579
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6253,10 +6282,13 @@ MonoBehaviour:
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
-  - Hello
+  - speakerName: 
+    speakerAvatar: {fileID: 0}
+    text: 
   wordSpeed: 0
   playerIsClose: 0
-  state: 0
+  dialogueDone: 0
+  questManager: {fileID: 1056274057}
 --- !u!58 &1925597853
 CircleCollider2D:
   m_ObjectHideFlags: 0
