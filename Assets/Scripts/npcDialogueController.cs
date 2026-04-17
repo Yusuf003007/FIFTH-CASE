@@ -30,6 +30,7 @@ public class npcDialogueController : MonoBehaviour {
 
   private int index = 0;
   public bool dialogueDone = false;
+  public level1Controller questManager;
 
   void Start() {
     dialogueText.text = "";
@@ -94,6 +95,11 @@ public class npcDialogueController : MonoBehaviour {
     dialoguePanel.SetActive(false);
     HintDialogueKey.SetActive(true);
     dialogueDone = true;
+    Debug.Log(" OUT");
+    if (questManager != null) {
+      Debug.Log(" IN");
+      questManager.OnNPCDialogueFinished(this);
+    }
   }
 
   public void SetDialogue(DialogueLine[] newDialogue) {

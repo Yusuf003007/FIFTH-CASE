@@ -24,14 +24,16 @@ public class level1Controller : MonoBehaviour {
 
     questHintPanel.SetActive(true);
     questHintText.text = "Talk to the Inspector";
+    HandleQuestProgress();
   }
 
-  void Update() {
-    if (Keyboard.current.eKey.wasPressedThisFrame) {
-      HandleQuestProgress();
-    }
-  }
+  void Update() {}
 
+  public void OnNPCDialogueFinished(npcDialogueController npc) {
+    Debug.Log(npc.npcName + " finished dialogue");
+
+    HandleQuestProgress();
+  }
   void HandleQuestProgress() {
     // INSPECTOR TALK
     if (questStage == 0) {
