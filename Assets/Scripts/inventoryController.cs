@@ -67,4 +67,13 @@ public class InventoryController : MonoBehaviour {
     // Debug.Log("Coroutine finished");
     Panel.SetActive(false);
   }
+  public bool HasItems(int[] requiredItems) {
+    foreach (int id in requiredItems) {
+      if (!inventory.Contains(id)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
 }

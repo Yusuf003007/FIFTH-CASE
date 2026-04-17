@@ -29,7 +29,7 @@ public class npcDialogueController : MonoBehaviour {
   public bool playerIsClose = true;
 
   private int index = 0;
-  public bool state = false;
+  public bool dialogueDone = false;
 
   void Start() {
     dialogueText.text = "";
@@ -93,7 +93,7 @@ public class npcDialogueController : MonoBehaviour {
     index = 0;
     dialoguePanel.SetActive(false);
     HintDialogueKey.SetActive(true);
-    state = true;
+    dialogueDone = true;
   }
 
   public void SetDialogue(DialogueLine[] newDialogue) {
