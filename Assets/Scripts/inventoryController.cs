@@ -8,37 +8,49 @@ public class InventoryController : MonoBehaviour {
   public static InventoryController Instance;
 
   public List<int> inventory = new List<int>();
-  public GameObject Panel;
-  public Text textPanel;
-  public Transform inventoryPanel;  // parent UI panel
-  public GameObject itemSlotPrefab; // prefab with Image
+
+  [Header("In game notification")]
+  public GameObject inventoryNofification;
+  public Text inventoryNotificationMesssage;
+
+  [Header("Inventory Menu")]
+  public GameObject inventoryMenu;
+  public Transform inventoryPanelFlexbox; // parent UI containing the item
+  public GameObject itemSlotPrefab;       // prefab with Image
 
   void Update() {
     if (Keyboard.current.escapeKey.wasPressedThisFrame) {
-      inventoryPanel.gameObject.SetActive(
-          !inventoryPanel.gameObject.activeSelf);
-      if (inventoryPanel.gameObject.activeSelf)
+      inventoryMenu.gameObject.SetActive(!inventoryMenu.gameObject.activeSelf);
+      if (inventoryMenu.gameObject.activeSelf)
         RefreshUI();
     }
   }
   void Awake() { Instance = this; }
 
-  public void RefreshUI() {
+  private void RefreshUI() {
     // Clear old UI
-    foreach (Transform child in inventoryPanel) {
-      Destroy(child.gameObject);
+    for (int i = inventoryPanelFlexbox.childCount - 1; i >= 0; i--) {
+      DestroyImmediate(inventoryPanelFlexbox.GetChild(i).gameObject);
     }
-
-    // Loop inventory
+    Debug.Log("Inventory content: " + string.Join(", ", inventory));
+    //  Loop inventory
     foreach (int id in inventory) {
       ItemData item = ItemDatabase.Instance.GetItemById(id);
 
       if (item != null) {
-        GameObject slot = Instantiate(itemSlotPrefab, inventoryPanel);
+        GameObject slot = Instantiate(itemSlotPrefab, inventoryPanelFlexbox);
+        Debug.Log("Created slot: " + slot.name);
 
         Image img = slot.GetComponent<Image>();
         img.sprite = item.avatar;
         img.enabled = true;
+
+        Text txt = slot.GetComponentInChildren<Text>();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            txt.GetComponent<RectTransform>());
+        txt.text = item.name; // or whatever field you have
+        txt.enabled = true;
+        Debug.Log("item text: " + item.name);
       }
     }
   }
@@ -51,9 +63,10 @@ public class InventoryController : MonoBehaviour {
     if (item != null) {
       // Debug.Log("Picked up: " + item.name);
 
-      Panel.SetActive(true);
+      inventoryNofification.SetActive(true);
 
-      textPanel.text = "Item " + item.name + " added to the inventory";
+      inventoryNotificationMesssage.text =
+          "Item " + item.name + " added to the inventory";
 
       StartCoroutine(HidePanelAfterDelay(3f));
     } else {
@@ -65,7 +78,7 @@ public class InventoryController : MonoBehaviour {
     // Debug.Log("Coroutine started");
     yield return new WaitForSeconds(delay);
     // Debug.Log("Coroutine finished");
-    Panel.SetActive(false);
+    inventoryNofification.SetActive(false);
   }
   public bool HasItems(int[] requiredItems) {
     foreach (int id in requiredItems) {

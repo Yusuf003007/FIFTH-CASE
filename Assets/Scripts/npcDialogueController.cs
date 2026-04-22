@@ -95,9 +95,9 @@ public class npcDialogueController : MonoBehaviour {
     dialoguePanel.SetActive(false);
     HintDialogueKey.SetActive(true);
     dialogueDone = true;
-    Debug.Log(" OUT");
+    // Debug.Log(" OUT");
     if (questManager != null) {
-      Debug.Log(" IN");
+      // Debug.Log(" IN");
       questManager.OnNPCDialogueFinished(this);
     }
   }

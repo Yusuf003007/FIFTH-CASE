@@ -39,7 +39,7 @@ public class level1Controller : MonoBehaviour {
     if (questStage == 0) {
       TalkToInspector();
 
-      Debug.Log("Inspector dialogueDone = " + inspector.dialogueDone);
+      // Debug.Log("Inspector dialogueDone = " + inspector.dialogueDone);
       if (inspector.dialogueDone == true) {
         questStage = 1;
         Debug.Log("Inspector dialogueDone = " + inspector.dialogueDone);
@@ -63,14 +63,14 @@ public class level1Controller : MonoBehaviour {
     }
   }
 
-  public bool HasAllEvidence() {
+  private bool HasAllEvidence() {
     if (InventoryController.Instance.HasItems(new int[] { 0, 1, 2 })) {
       return true;
     }
     return false;
   }
 
-  public void TalkToInspector() {
+  private void TalkToInspector() {
     DialogueLine[] conversation = new DialogueLine[] {
       new DialogueLine {
         speakerName = inspector.npcName, speakerAvatar = inspector.npcAvatar,
@@ -168,12 +168,12 @@ public class level1Controller : MonoBehaviour {
     inspector.SetDialogue(conversation);
   }
 
-  public void TalkToPolice() {
+  private void TalkToPolice() {
     Policeman1Conversation();
     Policeman2Conversation();
     Policeman3Conversation();
   }
-  public void TalkToWitness() {
+  private void TalkToWitness() {
     DialogueLine[] conversation = new DialogueLine[] {
       new DialogueLine {
         speakerName = witness.npcName, speakerAvatar = witness.npcAvatar,
@@ -254,7 +254,7 @@ public class level1Controller : MonoBehaviour {
     witness.SetDialogue(conversation);
   }
 
-  public void ChangeDialogue(npcDialogueController npc, string text) {
+  private void ChangeDialogue(npcDialogueController npc, string text) {
     DialogueLine line =
         new DialogueLine { speakerName = "Inspector", // or npc.npcName
                            speakerAvatar = npc.npcAvatar, text = text };
@@ -262,7 +262,7 @@ public class level1Controller : MonoBehaviour {
     npc.SetDialogue(new DialogueLine[] { line });
   }
 
-  public void Policeman1Conversation() {
+  private void Policeman1Conversation() {
     DialogueLine[] conversation = new DialogueLine[] {
       new DialogueLine { speakerName = policeman1.npcName,
                          speakerAvatar = policeman1.npcAvatar,
@@ -286,7 +286,7 @@ public class level1Controller : MonoBehaviour {
 
     policeman1.SetDialogue(conversation);
   }
-  public void Policeman2Conversation() {
+  private void Policeman2Conversation() {
     DialogueLine[] conversation = new DialogueLine[] {
       new DialogueLine { speakerName = policeman2.npcName,
                          speakerAvatar = policeman2.npcAvatar,
@@ -309,7 +309,7 @@ public class level1Controller : MonoBehaviour {
 
     policeman2.SetDialogue(conversation);
   }
-  public void Policeman3Conversation() {
+  private void Policeman3Conversation() {
     DialogueLine[] conversation = new DialogueLine[] {
       new DialogueLine { speakerName = policeman3.npcName,
                          speakerAvatar = policeman3.npcAvatar,
