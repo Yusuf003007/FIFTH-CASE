@@ -17,12 +17,15 @@ public class InventoryController : MonoBehaviour {
   public GameObject inventoryMenu;
   public Transform inventoryPanelFlexbox; // parent UI containing the item
   public GameObject itemSlotPrefab;       // prefab with Image
+  public GameObject itemDescription;
+  public Text itemDescriptionText;
 
   void Update() {
     if (Keyboard.current.escapeKey.wasPressedThisFrame) {
       inventoryMenu.gameObject.SetActive(!inventoryMenu.gameObject.activeSelf);
       if (inventoryMenu.gameObject.activeSelf)
-        RefreshUI();
+        displayDescription(0);
+      RefreshUI();
     }
   }
   void Awake() { Instance = this; }
@@ -32,29 +35,40 @@ public class InventoryController : MonoBehaviour {
     for (int i = inventoryPanelFlexbox.childCount - 1; i >= 0; i--) {
       DestroyImmediate(inventoryPanelFlexbox.GetChild(i).gameObject);
     }
-    Debug.Log("Inventory content: " + string.Join(", ", inventory));
-    //  Loop inventory
+    itemDescription.SetActive(false);
+    // Debug.Log("Inventory content: " + string.Join(", ", inventory));
+    //   Loop inventory
     foreach (int id in inventory) {
       ItemData item = ItemDatabase.Instance.GetItemById(id);
 
       if (item != null) {
         GameObject slot = Instantiate(itemSlotPrefab, inventoryPanelFlexbox);
-        Debug.Log("Created slot: " + slot.name);
+        // Debug.Log("Created slot: " + slot.name);
 
         Image img = slot.GetComponent<Image>();
         img.sprite = item.avatar;
         img.enabled = true;
+
+        Button btn = slot.GetComponent<Button>();
+        btn.onClick.AddListener(() => displayDescription(id));
 
         Text txt = slot.GetComponentInChildren<Text>();
         LayoutRebuilder.ForceRebuildLayoutImmediate(
             txt.GetComponent<RectTransform>());
         txt.text = item.name; // or whatever field you have
         txt.enabled = true;
-        Debug.Log("item text: " + item.name);
+        // Debug.Log("item text: " + item.name);
       }
     }
   }
 
+  public void displayDescription(int id) {
+
+    itemDescription.SetActive(true);
+    ItemData item = ItemDatabase.Instance.GetItemById(id);
+    itemDescriptionText.text = item.description;
+    Debug.Log(item.description);
+  }
   public void AddItem(int id) {
     inventory.Add(id);
 
