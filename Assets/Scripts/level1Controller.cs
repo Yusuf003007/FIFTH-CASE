@@ -34,10 +34,16 @@ public class level1Controller : MonoBehaviour {
 
     HandleQuestProgress();
   }
+  public void checkQuestStage() { HandleQuestProgress(); }
+
   void HandleQuestProgress() {
     // INSPECTOR TALK
     if (questStage == 0) {
       TalkToInspector();
+      setNullDiscussion(policeman1);
+      setNullDiscussion(policeman2);
+      setNullDiscussion(policeman3);
+      setNullDiscussion(witness);
 
       // Debug.Log("Inspector dialogueDone = " + inspector.dialogueDone);
       if (inspector.dialogueDone == true) {
@@ -68,6 +74,15 @@ public class level1Controller : MonoBehaviour {
       return true;
     }
     return false;
+  }
+  private void setNullDiscussion(npcDialogueController npc) {
+    DialogueLine[] conversation = new DialogueLine[] {
+      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
+                         text = "Something tells you this isn’t the right " +
+                                "moment, let's talk with them later." }
+    };
+    npc.SetDialogue(conversation);
+    npc.npcNotAvailable = true;
   }
 
   private void TalkToInspector() {
@@ -166,6 +181,7 @@ public class level1Controller : MonoBehaviour {
     };
 
     inspector.SetDialogue(conversation);
+    inspector.npcNotAvailable = false;
   }
 
   private void TalkToPolice() {
@@ -252,15 +268,16 @@ public class level1Controller : MonoBehaviour {
     };
 
     witness.SetDialogue(conversation);
+    witness.npcNotAvailable = false;
   }
 
-  private void ChangeDialogue(npcDialogueController npc, string text) {
-    DialogueLine line =
-        new DialogueLine { speakerName = "Inspector", // or npc.npcName
-                           speakerAvatar = npc.npcAvatar, text = text };
+  // private void ChangeDialogue(npcDialogueController npc, string text) {
+  //   DialogueLine line =
+  //       new DialogueLine { speakerName = "Inspector", // or npc.npcName
+  //                          speakerAvatar = npc.npcAvatar, text = text };
 
-    npc.SetDialogue(new DialogueLine[] { line });
-  }
+  //  npc.SetDialogue(new DialogueLine[] { line });
+  //}
 
   private void Policeman1Conversation() {
     DialogueLine[] conversation = new DialogueLine[] {
@@ -285,6 +302,7 @@ public class level1Controller : MonoBehaviour {
     };
 
     policeman1.SetDialogue(conversation);
+    policeman1.npcNotAvailable = false;
   }
   private void Policeman2Conversation() {
     DialogueLine[] conversation = new DialogueLine[] {
@@ -308,6 +326,7 @@ public class level1Controller : MonoBehaviour {
     };
 
     policeman2.SetDialogue(conversation);
+    policeman2.npcNotAvailable = false;
   }
   private void Policeman3Conversation() {
     DialogueLine[] conversation = new DialogueLine[] {
@@ -328,5 +347,6 @@ public class level1Controller : MonoBehaviour {
     };
 
     policeman3.SetDialogue(conversation);
+    policeman3.npcNotAvailable = false;
   }
 }

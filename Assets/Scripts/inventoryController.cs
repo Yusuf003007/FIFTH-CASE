@@ -19,6 +19,7 @@ public class InventoryController : MonoBehaviour {
   public GameObject itemSlotPrefab;       // prefab with Image
   public GameObject itemDescription;
   public Text itemDescriptionText;
+  public level1Controller questManager;
 
   void Update() {
     if (Keyboard.current.escapeKey.wasPressedThisFrame) {
@@ -83,9 +84,11 @@ public class InventoryController : MonoBehaviour {
           "Item " + item.name + " added to the inventory";
 
       StartCoroutine(HidePanelAfterDelay(3f));
+
     } else {
       // Debug.LogWarning("Item ID not found: " + id);
     }
+    questManager.checkQuestStage();
   }
 
   private IEnumerator HidePanelAfterDelay(float delay) {
