@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/134.0.6998.205 Electron/35.6.0 Safari/537.36" version="26.1.1">
   <diagram name="Page-1" id="PwbAogSf_RBw3U_CqV1p">
-    <mxGraphModel dx="806" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="958" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -83,14 +83,17 @@
         <mxCell id="n9fOUolEITiEXT3mDwRn-2" value="3 policeman&lt;div&gt;1 withness&lt;/div&gt;&lt;div&gt;2 inspector&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="1" vertex="1">
           <mxGeometry x="630" y="570" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="N_7YIYTTOeZvxc78QOW0-1" value="Go talk to the inspector" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="N_7YIYTTOeZvxc78QOW0-1" value="Go talk to the inspector" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="630" y="680" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N_7YIYTTOeZvxc78QOW0-2" value="Collect items and policeman" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="N_7YIYTTOeZvxc78QOW0-2" value="Collect items and policeman" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="780" y="680" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N_7YIYTTOeZvxc78QOW0-3" value="talk to the withness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="N_7YIYTTOeZvxc78QOW0-3" value="talk to the withness" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="930" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="o0jyTHsvqFrJEs3EQRNe-1" value="&lt;div&gt;- anymous character from nightmare&lt;/div&gt;- player&lt;div&gt;- phone&lt;/div&gt;&lt;div&gt;- police inspector&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="210" width="100" height="115" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

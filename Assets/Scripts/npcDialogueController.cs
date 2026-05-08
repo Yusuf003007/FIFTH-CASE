@@ -4,13 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-[System.Serializable]
-public class DialogueLine {
-  public string speakerName;
-  public Sprite speakerAvatar;
-  public string text;
-}
-
 public class npcDialogueController : MonoBehaviour {
   [Header("NPC identity")]
   public string npcName;
