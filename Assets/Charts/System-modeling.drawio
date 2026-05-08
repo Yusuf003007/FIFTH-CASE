@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/134.0.6998.205 Electron/35.6.0 Safari/537.36" version="26.1.1">
+  <diagram name="Page-1" id="7vaORbXfqQFOjWgHlPMA">
+    <mxGraphModel dx="809" dy="1071" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="srVQDw9B7sMJdoHag-I_-2" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Level 1 map&lt;/font&gt;" style="html=1;whiteSpace=wrap;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="1">
+          <mxGeometry x="850" y="430" width="430" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="srVQDw9B7sMJdoHag-I_-1" value="Player" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="870" y="460" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="srVQDw9B7sMJdoHag-I_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="srVQDw9B7sMJdoHag-I_-3" target="srVQDw9B7sMJdoHag-I_-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="srVQDw9B7sMJdoHag-I_-3" value="&lt;font color=&quot;#000000&quot;&gt;Inventory system&lt;/font&gt;" style="html=1;whiteSpace=wrap;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="440" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="srVQDw9B7sMJdoHag-I_-4" value="&lt;font color=&quot;#000000&quot;&gt;Quest controller&lt;/font&gt;" style="html=1;whiteSpace=wrap;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="550" width="180" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
