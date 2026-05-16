@@ -38,7 +38,8 @@ public class RebindKey : MonoBehaviour {
           case "MoveUp":
             setKey(i, KeyCode.W);
             key = GetKey(i);
-            moveAction.action.ApplyBindingOverride(1, "<Keyboard>/w");
+            // moveAction.action.ApplyBindingOverride(1, "<Keyboard>/w");
+            StartCoroutine(ApplyRebind(moveAction, key));
 
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
@@ -47,8 +48,10 @@ public class RebindKey : MonoBehaviour {
           case "MoveDown":
             setKey(i, KeyCode.S);
 
-            moveAction.action.ApplyBindingOverride(2, "<Keyboard>/s");
+            // moveAction.action.ApplyBindingOverride(2, "<Keyboard>/s");
             key = GetKey(i);
+            StartCoroutine(ApplyRebind(moveAction, key));
+
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
@@ -57,7 +60,8 @@ public class RebindKey : MonoBehaviour {
             setKey(i, KeyCode.A);
             key = GetKey(i);
 
-            moveAction.action.ApplyBindingOverride(3, "<Keyboard>/a");
+            // moveAction.action.ApplyBindingOverride(3, "<Keyboard>/a");
+            StartCoroutine(ApplyRebind(moveAction, key));
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
@@ -65,8 +69,10 @@ public class RebindKey : MonoBehaviour {
           case "MoveRight":
             setKey(i, KeyCode.D);
 
-            moveAction.action.ApplyBindingOverride(4, "<Keyboard>/d");
+            // moveAction.action.ApplyBindingOverride(4, "<Keyboard>/d");
             key = GetKey(i);
+
+            StartCoroutine(ApplyRebind(moveAction, key));
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
