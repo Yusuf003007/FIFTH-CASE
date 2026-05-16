@@ -13,18 +13,22 @@ public class npcDialogueController : MonoBehaviour {
   public Text displayName;
   public Image displayAvatar;
   public GameObject dialoguePanel;
+  public GameObject buttonNext;
+  public GameObject buttonExit;
+
   public Text dialogueText;
   public GameObject HintDialogueKey;
 
   [Header("Dialogue Settings")]
   public DialogueLine[] dialogue;
   public float wordSpeed;
-  public bool playerIsClose = true;
+  public bool playerIsClose = false;
 
   private int index = 0;
   public bool dialogueDone = false;
   public bool npcNotAvailable = true;
   public level1Controller questManager;
+  public entryCinematicDiscussion cinematicEntry;
 
   [Header("Keybind purpose")]
   public GameObject controlSettings;
@@ -32,6 +36,8 @@ public class npcDialogueController : MonoBehaviour {
   void Start() {
     dialogueText.text = "";
     HintDialogueKey.SetActive(false);
+    buttonNext.GetComponent<Button>().onClick.AddListener(NextLine);
+    buttonExit.GetComponent<Button>().onClick.AddListener(RemoveText);
   }
 
   void Update() {
@@ -55,6 +61,12 @@ public class npcDialogueController : MonoBehaviour {
     //    RebindKey.Instance.waitingForKey == false) {
     //  RemoveText();
     //}
+  }
+  public void displayDialogue() {
+    dialoguePanel.SetActive(true);
+    HintDialogueKey.SetActive(false);
+
+    ShowLine();
   }
 
   void ShowLine() {
@@ -82,6 +94,7 @@ public class npcDialogueController : MonoBehaviour {
   }
 
   public void NextLine() {
+    Debug.Log("Called nextline");
     if (index < dialogue.Length - 1) {
       index++;
       ShowLine();
@@ -92,6 +105,9 @@ public class npcDialogueController : MonoBehaviour {
         if (questManager != null) {
           // Debug.Log(" IN");
           questManager.OnNPCDialogueFinished(this);
+        }
+        if (cinematicEntry != null) {
+          cinematicEntry.OnNPCDialogueFinished(this);
         }
       }
       RemoveText();

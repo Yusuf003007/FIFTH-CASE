@@ -529,10 +529,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7179393266b4d039813b2dec39dd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController2D
+  lockPlayer: 0
   speed: 5
   canMoveDiagonally: 1
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
+  controlSettings: {fileID: 2091561466}
 --- !u!70 &51347680
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -770,6 +772,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -781,6 +785,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 1
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!58 &51396479
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2579,6 +2585,7 @@ GameObject:
   - component: {fileID: 367033359}
   - component: {fileID: 367033358}
   - component: {fileID: 367033357}
+  - component: {fileID: 367033363}
   m_Layer: 0
   m_Name: NPC_inspector_friend
   m_TagString: Untagged
@@ -2655,6 +2662,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -2666,6 +2675,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 0
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!50 &367033359
 Rigidbody2D:
   serializedVersion: 5
@@ -2810,6 +2821,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &367033363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367033355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6b8ee77db446f62baf7fddd82a2a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  controlPanel: {fileID: 1852157900}
+  director: {fileID: 416344435}
+  playerName: You
+  playerAvatar: {fileID: 1480920046, guid: 7dd1a385b576e6c48b64bdcbd9641e06, type: 3}
+  friendInspector: {fileID: 367033358}
 --- !u!1 &388664562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,7 +3359,6 @@ GameObject:
   - component: {fileID: 416344434}
   - component: {fileID: 416344437}
   - component: {fileID: 416344438}
-  - component: {fileID: 416344439}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -3442,35 +3469,18 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 416344439}
+        - m_Target: {fileID: 367033363}
           m_TargetAssemblyTypeName: entryCinematicDiscussion, Assembly-CSharp
           m_MethodName: startEntryDiscussion
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 367033358}
+            m_ObjectArgumentAssemblyTypeName: npcDialogueController, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &416344439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416344433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6b8ee77db446f62baf7fddd82a2a83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  controlPanel: {fileID: 1852157900}
-  director: {fileID: 416344435}
-  playerName: You
-  playerAvatar: {fileID: 1480920046, guid: 7dd1a385b576e6c48b64bdcbd9641e06, type: 3}
-  friendInspector: {fileID: 367033358}
 --- !u!1 &463153858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,9 +4067,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: 
   keyText: {fileID: 1140340935}
   messageKeyUsed: {fileID: 0}
+  action: 
   moveAction: {fileID: 0}
 --- !u!1 &518672112
 GameObject:
@@ -5280,9 +5290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: MoveRight
   keyText: {fileID: 2132944354}
   messageKeyUsed: {fileID: 1317917978}
+  action: MoveRight
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &570959290
@@ -5826,6 +5836,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -5837,6 +5849,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 1
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!58 &617412373
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6497,6 +6511,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -6508,6 +6524,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 1
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!70 &727355463
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7759,7 +7777,7 @@ GameObject:
   - component: {fileID: 873643143}
   - component: {fileID: 873643142}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8072,6 +8090,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -8086,6 +8106,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 1
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!70 &909926711
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8663,7 +8685,7 @@ Transform:
   m_GameObject: {fileID: 1004625131}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.92333, y: -2.3646898, z: -10}
+  m_LocalPosition: {x: -32.79227, y: -6.588891, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10764,9 +10786,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: MoveUp
   keyText: {fileID: 1140340935}
   messageKeyUsed: {fileID: 1317917978}
+  action: MoveUp
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &1249946877
@@ -13980,9 +14002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: MoveDown
   keyText: {fileID: 129966149}
   messageKeyUsed: {fileID: 1317917978}
+  action: MoveDown
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &1685686433
@@ -14131,9 +14153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: PauseMenu
   keyText: {fileID: 1062095010}
   messageKeyUsed: {fileID: 1317917978}
+  action: PauseMenu
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &1692773776
@@ -15114,9 +15136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: MoveLeft
   keyText: {fileID: 7662160}
   messageKeyUsed: {fileID: 1317917978}
+  action: MoveLeft
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &1776031168
@@ -15296,7 +15318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416344439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: entryCinematicDiscussion, Assembly-CSharp
         m_MethodName: startEntryDiscussion
         m_Mode: 1
@@ -16237,9 +16259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: Inventory
   keyText: {fileID: 593823740}
   messageKeyUsed: {fileID: 1317917978}
+  action: Inventory
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &1895145550
@@ -16939,6 +16961,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -16950,6 +16974,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 1
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!70 &1921603579
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -17276,6 +17302,8 @@ MonoBehaviour:
   displayName: {fileID: 1205901222}
   displayAvatar: {fileID: 1539728745}
   dialoguePanel: {fileID: 404662812}
+  buttonNext: {fileID: 0}
+  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1588102723}
   HintDialogueKey: {fileID: 2097508140}
   dialogue:
@@ -17287,6 +17315,8 @@ MonoBehaviour:
   dialogueDone: 0
   npcNotAvailable: 1
   questManager: {fileID: 1056274057}
+  cinematicEntry: {fileID: 0}
+  controlSettings: {fileID: 2091561466}
 --- !u!58 &1925597853
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17454,9 +17484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  action: Interact
   keyText: {fileID: 1035201983}
   messageKeyUsed: {fileID: 1317917978}
+  action: Interact
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!114 &1953736262

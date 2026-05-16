@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class playerController2D : MonoBehaviour {
+
   // Public variables
+  public bool lockPlayer = false;
   public float speed = 5f; // The speed at which the player moves
   public bool canMoveDiagonally =
       true; // Controls whether the player can move diagonally
@@ -32,8 +34,8 @@ public class playerController2D : MonoBehaviour {
 
   void Update() {
 
-    if (controlSettings.gameObject
-            .activeSelf) // or whatever your pause menu is called
+    if (controlSettings.gameObject.activeSelf ||
+        lockPlayer) // or whatever your pause menu is called
     {
       movement = Vector2.zero;
       return;
