@@ -7,9 +7,11 @@ using System.Collections.Generic;
 public class RebindKey : MonoBehaviour {
 
   public static RebindKey Instance;
-  public string action;           // the action of the key
-  private KeyCode key;            // the key
-  public TextMeshProUGUI keyText; // where to display the key
+  public string action;             // the action of the key
+  private KeyCode key;              // the key
+  public TextMeshProUGUI keyText;   // where to display the key
+  public GameObject messageKeyUsed; // where to display the key
+
   private bool waitingForKey = false;
 
   public InputActionReference moveAction;
@@ -107,57 +109,18 @@ public class RebindKey : MonoBehaviour {
           key = e.keyCode;
           waitingForKey = false;
           Debug.Log("Done");
-          //         ApplyRebind(moveAction, key);
-          StartCoroutine(ApplyRebind(moveAction, key));
+          List<string> movementAction =
+              new List<string> { "MoveUp", "MoveDown", "MoveLeft",
+                                 "MoveRight" };
 
+          foreach (string i in movementAction) {
+            if (action == i) {
+
+              StartCoroutine(ApplyRebind(moveAction, key));
+            }
+          }
           UpdateKeyText(key);
           setKey(action, key);
-
-          // StartCoroutine(ApplyRebind(moveAction, key));
-
-          // List<string> movementAction =
-          //     new List<string> { "MoveUp", "MoveDown", "MoveLeft",
-          //                        "MoveRight" };
-
-          // foreach (string i in movementAction) {
-          //   if (action == i) {
-          //     // setMovementKey(action, key, moveAction);
-          //     string keyBind = key.ToString().ToLower();
-          //     string keySetup = $"<Keyboard>/{keyBind}";
-
-          //    switch (action) {
-          //    case "MoveUp":
-          //      moveAction.action.ApplyBindingOverride(1, keySetup);
-
-          //      break;
-
-          //    case "MoveDown":
-          //      moveAction.action.ApplyBindingOverride(2, keySetup);
-
-          //      break;
-
-          //    case "MoveLeft":
-          //      moveAction.action.ApplyBindingOverride(3, keySetup);
-
-          //      break;
-
-          //    case "MoveRight":
-          //      moveAction.action.ApplyBindingOverride(4, keySetup);
-
-          //      break;
-
-          //    default:
-          //      break;
-          //    } //    Dictionary<string, int> bindingIndex = new() {
-          //    //      { "MoveUp", 0 }, { "MoveDown", 1 }, { "MoveLeft", 2 }, {
-          //    //      "MoveRight", 3 }
-          //    //    };
-
-          //    Debug.Log("KeySetup =" + keySetup);
-          //    // moveAction.action.ApplyBindingOverride(id, keySetup);
-          //    // for (int j = 0; j < moveAction.action.bindings.Count; j++) {
-          //    //  Debug.Log(j + " => " + moveAction.action.bindings[j].path);
-          //}
         }
       }
 
@@ -234,10 +197,17 @@ public class RebindKey : MonoBehaviour {
     foreach (string i in actionList) {
       if (currentKey == GetKey(i)) {
 
+        StartCoroutine(ShowMessageForSeconds(5f));
         return false;
       }
     }
     return true;
+  }
+
+  private IEnumerator ShowMessageForSeconds(float duration) {
+    messageKeyUsed.SetActive(true);
+    yield return new WaitForSeconds(duration);
+    messageKeyUsed.SetActive(false);
   }
 
   public KeyCode GetKey(string action) {
