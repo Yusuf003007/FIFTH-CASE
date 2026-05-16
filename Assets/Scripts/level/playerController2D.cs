@@ -16,14 +16,17 @@ public class playerController2D : MonoBehaviour {
   private Vector2 movement; // Stores the direction of player movement
   private bool isMovingHorizontally =
       true; // Flag to track if the player is moving horizontally
+  public static playerController2D Instance;
 
-  private void OnEnable() { moveAction.action.Enable(); }
+  private void Awake() { Instance = this; }
+
+  private void OnEnable() { // moveAction.action.Enable();
+  }
 
   void Start() {
-    // Initialize the Rigidbody2D component
     rb = GetComponent<Rigidbody2D>();
-    // Prevent the player from rotating
     rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    moveAction.action.Enable(); // Enable once, here, after overrides are safe
   }
 
   void Update() {
