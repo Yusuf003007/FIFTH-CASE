@@ -20,6 +20,7 @@ public class playerController2D : MonoBehaviour {
 
   private void Awake() { Instance = this; }
 
+  public GameObject controlSettings;
   private void OnEnable() { // moveAction.action.Enable();
   }
 
@@ -30,6 +31,13 @@ public class playerController2D : MonoBehaviour {
   }
 
   void Update() {
+
+    if (controlSettings.gameObject
+            .activeSelf) // or whatever your pause menu is called
+    {
+      movement = Vector2.zero;
+      return;
+    }
     // Get player input from keyboard or controller
     Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
 

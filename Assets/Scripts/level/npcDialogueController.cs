@@ -26,13 +26,19 @@ public class npcDialogueController : MonoBehaviour {
   public bool npcNotAvailable = true;
   public level1Controller questManager;
 
+  [Header("Keybind purpose")]
+  public GameObject controlSettings;
+
   void Start() {
     dialogueText.text = "";
     HintDialogueKey.SetActive(false);
   }
 
   void Update() {
-    if (Keyboard.current.eKey.wasPressedThisFrame && playerIsClose) {
+    KeyCode inventoryKey = RebindKey.Instance.GetKey("Interact");
+    Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
+    if (Keyboard.current[unityKey].wasPressedThisFrame && playerIsClose &&
+        !controlSettings.gameObject.activeSelf) {
       if (!dialoguePanel.activeInHierarchy) {
         dialoguePanel.SetActive(true);
         HintDialogueKey.SetActive(false);
@@ -43,10 +49,12 @@ public class npcDialogueController : MonoBehaviour {
       }
     }
 
-    if (Keyboard.current.qKey.wasPressedThisFrame &&
-        dialoguePanel.activeInHierarchy) {
-      RemoveText();
-    }
+    // too lazy to add the keybind in the control menu
+    // if (Keyboard.current.qKey.wasPressedThisFrame &&
+    //    dialoguePanel.activeInHierarchy &&
+    //    RebindKey.Instance.waitingForKey == false) {
+    //  RemoveText();
+    //}
   }
 
   void ShowLine() {

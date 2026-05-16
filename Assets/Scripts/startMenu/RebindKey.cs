@@ -7,14 +7,18 @@ using System.Collections.Generic;
 public class RebindKey : MonoBehaviour {
 
   public static RebindKey Instance;
-  public string action;             // the action of the key
-  private KeyCode key;              // the key
+
+  [Header("Display")]
   public TextMeshProUGUI keyText;   // where to display the key
   public GameObject messageKeyUsed; // where to display the key
 
+  [Header("Backend")]
+  public string action; // the action of the key
+  public InputActionReference moveAction;
   private bool waitingForKey = false;
 
-  public InputActionReference moveAction;
+  private KeyCode key; // the key
+
   void Start() {
     string[] actionList =
         new string[] { "MoveUp",   "MoveDown",  "MoveLeft", "MoveRight",
