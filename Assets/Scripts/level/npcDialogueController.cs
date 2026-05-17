@@ -36,8 +36,11 @@ public class npcDialogueController : MonoBehaviour {
   void Start() {
     dialogueText.text = "";
     HintDialogueKey.SetActive(false);
-    buttonNext.GetComponent<Button>().onClick.AddListener(NextLine);
-    buttonExit.GetComponent<Button>().onClick.AddListener(RemoveText);
+    // buttonNext.GetComponent<Button>().onClick.RemoveAllListeners();
+    // buttonNext.GetComponent<Button>().onClick.AddListener(NextLine);
+
+    // buttonExit.GetComponent<Button>().onClick.RemoveAllListeners();
+    // buttonExit.GetComponent<Button>().onClick.AddListener(RemoveText);
   }
 
   void Update() {
@@ -76,7 +79,7 @@ public class npcDialogueController : MonoBehaviour {
     displayAvatar.sprite = dialogue[index].speakerAvatar;
 
     // Optional: align text depending on speaker
-    if (dialogue[index].speakerName == "Player") {
+    if (dialogue[index].speakerName == "You") {
       dialogueText.alignment = TextAnchor.MiddleRight;
     } else {
       dialogueText.alignment = TextAnchor.MiddleLeft;
