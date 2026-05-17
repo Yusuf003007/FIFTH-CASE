@@ -45,16 +45,21 @@ public class entryCinematicDiscussion : MonoBehaviour {
   public void startEntryDiscussion(npcDialogueController npc) {
     playerController2D.Instance.lockPlayer = true;
     entryDiscussion(friendInspector);
+    npc.playerIsClose = true;
     npc.displayDialogue();
+    Debug.Log("called npc displayDialogue");
   }
 
   public void OnNPCDialogueFinished(npcDialogueController npc) {
     playerController2D.Instance.lockPlayer = false;
 
+    npc.playerIsClose = false;
     Debug.Log(npc.npcName + " finished dialogue");
   }
 
   private void entryDiscussion(npcDialogueController npc) {
+    Debug.Log("called entryDiscussion");
+
     DialogueLine[] conversation = new DialogueLine[] {
 
       new DialogueLine {

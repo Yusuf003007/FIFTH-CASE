@@ -69,7 +69,7 @@ public class npcDialogueController : MonoBehaviour {
     dialoguePanel.SetActive(true);
     HintDialogueKey.SetActive(false);
 
-    ShowLine();
+    NextLine();
   }
 
   void ShowLine() {
