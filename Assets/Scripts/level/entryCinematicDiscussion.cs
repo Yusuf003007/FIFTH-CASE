@@ -4,9 +4,7 @@ using System.Collections;
 
 public class entryCinematicDiscussion : MonoBehaviour {
   public GameObject controlPanel;
-
   public PlayableDirector director;
-
   public string playerName = "You";
   public Sprite playerAvatar;
   public npcDialogueController friendInspector;
@@ -44,17 +42,19 @@ public class entryCinematicDiscussion : MonoBehaviour {
 
   public void startEntryDiscussion(npcDialogueController npc) {
     playerController2D.Instance.lockPlayer = true;
-    entryDiscussion(friendInspector);
     npc.playerIsClose = true;
+
+    entryDiscussion(friendInspector);
     npc.displayDialogue();
-    Debug.Log("called npc displayDialogue");
   }
 
   public void OnNPCDialogueFinished(npcDialogueController npc) {
     playerController2D.Instance.lockPlayer = false;
-
     npc.playerIsClose = false;
-    Debug.Log(npc.npcName + " finished dialogue");
+
+    Debug.Log(npc.npcName +
+              " finished dialogue, playerisClose =" + npc.playerIsClose +
+              "lock =" + playerController2D.Instance.lockPlayer);
   }
 
   private void entryDiscussion(npcDialogueController npc) {

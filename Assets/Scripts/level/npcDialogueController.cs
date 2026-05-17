@@ -109,11 +109,19 @@ public class npcDialogueController : MonoBehaviour {
           // Debug.Log(" IN");
           questManager.OnNPCDialogueFinished(this);
         }
-        if (cinematicEntry != null) {
-          cinematicEntry.OnNPCDialogueFinished(this);
-        }
       }
       RemoveText();
+
+      if (cinematicEntry != null && npcNotAvailable == false) {
+        Debug.Log("IN");
+
+        dialogueDone = true;
+        playerIsClose = false;
+        playerController2D.Instance.lockPlayer = false;
+
+        cinematicEntry.OnNPCDialogueFinished(this);
+        HintDialogueKey.SetActive(false);
+      }
     }
   }
 
