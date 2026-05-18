@@ -7281,7 +7281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &404662813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10058,8 +10058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.6948, y: 0.0445}
-  m_SizeDelta: {x: 80.9427, y: 12.4499}
+  m_AnchoredPosition: {x: -1.148, y: -5.767601}
+  m_SizeDelta: {x: 77.6369, y: 49.3229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648794513
 MonoBehaviour:
@@ -10081,10 +10081,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next (Press E)
+  m_text: "Next \n(Press E)"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a8a4d8f5c71d7b44fb94e73e9992f14d, type: 2}
+  m_sharedMaterial: {fileID: -4573993390272996570, guid: a8a4d8f5c71d7b44fb94e73e9992f14d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10108,8 +10109,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12785,7 +12786,7 @@ Transform:
   m_GameObject: {fileID: 1004625131}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -489.03668, y: 61.36531, z: -10}
+  m_LocalPosition: {x: -554.75226, y: 57.14111, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -412489,7 +412490,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -414305,7 +414306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1022519213, guid: c56c8b6e03bfd653fafc289306518890, type: 3}
+  m_Sprite: {fileID: -1267117912, guid: 4e6a6c36c3972d296b54ceae6740dc5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
