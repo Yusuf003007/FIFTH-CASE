@@ -115,12 +115,12 @@ public class npcDialogueController : MonoBehaviour {
       if (cinematicEntry != null && npcNotAvailable == false) {
         Debug.Log("IN");
 
+        HintDialogueKey.SetActive(false);
         dialogueDone = true;
         playerIsClose = false;
         playerController2D.Instance.lockPlayer = false;
 
         cinematicEntry.OnNPCDialogueFinished(this);
-        HintDialogueKey.SetActive(false);
       }
     }
   }
@@ -130,6 +130,8 @@ public class npcDialogueController : MonoBehaviour {
     dialogueText.text = "";
     index = 0;
     dialoguePanel.SetActive(false);
+    Debug.Log("Hint dialogue TRUE from remove");
+
     HintDialogueKey.SetActive(true);
   }
 
@@ -141,13 +143,17 @@ public class npcDialogueController : MonoBehaviour {
   }
 
   private void OnTriggerEnter2D(Collider2D other) {
-    playerIsClose = true;
-    HintDialogueKey.SetActive(true);
+    if (other.CompareTag("Player")) {
+      playerIsClose = true;
+      Debug.Log("Hint dialogue TRUE from collide");
+      HintDialogueKey.SetActive(true);
+    }
   }
-
   private void OnTriggerExit2D(Collider2D other) {
-    playerIsClose = false;
-    RemoveText();
-    HintDialogueKey.SetActive(false);
+    if (other.CompareTag("Player")) {
+      playerIsClose = false;
+      Debug.Log("Hint dialogue False from collide");
+      HintDialogueKey.SetActive(true);
+    }
   }
 }

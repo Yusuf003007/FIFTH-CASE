@@ -346,8 +346,8 @@ MonoBehaviour:
   m_Name: Recorded (2)
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
   m_Clip: {fileID: 305450600068481105}
-  m_Position: {x: 1.518, y: -0.969, z: 0}
-  m_EulerAngles: {x: -0, y: 0, z: 0}
+  m_Position: {x: -526.64355, y: 62.685547, z: 0.0110762}
+  m_EulerAngles: {x: 0.048, y: 0, z: 0.044}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
@@ -424,8 +424,8 @@ MonoBehaviour:
   m_Name: Recorded
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
   m_Clip: {fileID: 4684244572542827611}
-  m_Position: {x: -40.58, y: -21.93, z: 0}
-  m_EulerAngles: {x: -0, y: 0, z: 0}
+  m_Position: {x: -567.63947, y: 41.043667, z: 0.0588862}
+  m_EulerAngles: {x: 0, y: 0.071, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
@@ -1449,8 +1449,8 @@ MonoBehaviour:
   m_Name: Recorded (1)
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AnimationPlayableAsset
   m_Clip: {fileID: -8740280835163321250}
-  m_Position: {x: -40.58, y: -21.93, z: 0}
-  m_EulerAngles: {x: -0, y: 0, z: 0}
+  m_Position: {x: -568.1582, y: 41.395912, z: -0.011982756}
+  m_EulerAngles: {x: 0, y: 0.071, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0

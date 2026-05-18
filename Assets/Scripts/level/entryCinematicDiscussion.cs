@@ -3,6 +3,8 @@ using UnityEngine.Playables;
 using System.Collections;
 
 public class entryCinematicDiscussion : MonoBehaviour {
+  public GameObject questHintPanel;
+
   public GameObject controlPanel;
   public PlayableDirector director;
   public string playerName = "You";
@@ -55,6 +57,8 @@ public class entryCinematicDiscussion : MonoBehaviour {
     Debug.Log(npc.npcName +
               " finished dialogue, playerisClose =" + npc.playerIsClose +
               "lock =" + playerController2D.Instance.lockPlayer);
+
+    questHintPanel.SetActive(true);
   }
 
   private void entryDiscussion(npcDialogueController npc) {
