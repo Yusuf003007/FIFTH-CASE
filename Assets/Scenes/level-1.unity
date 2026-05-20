@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController2D
   lockPlayer: 0
-  speed: 5
+  speed: 15
   canMoveDiagonally: 1
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
@@ -2202,6 +2202,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245896759}
   m_CullTransparentMesh: 1
+--- !u!1 &266747690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266747691}
+  m_Layer: 0
+  m_Name: House_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266747691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266747690}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -332.3, y: 70.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2096060291}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287280775
 GameObject:
   m_ObjectHideFlags: 0
@@ -17474,10 +17505,6 @@ Tilemap:
     m_Data: {fileID: 212517700, guid: 7152184b9810596d99a4eb950331037b, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 793996728, guid: 7152184b9810596d99a4eb950331037b, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1280
     m_Data:
@@ -17518,10 +17545,6 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 1292
     m_Data: {r: 1, g: 1, b: 1, a: 1}
-  - m_RefCount: 0
-    m_Data: {r: 0.7857571, g: 0.53893393, b: 0.5927662, a: 1}
-  - m_RefCount: 0
-    m_Data: {r: 0.8724749, g: 0.37324336, b: 0.515549, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -25595,7 +25618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1262384125
 Transform:
   m_ObjectHideFlags: 0
@@ -699487,8 +699510,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999951005}
-  - component: {fileID: 1999951006}
   - component: {fileID: 1999951007}
+  - component: {fileID: 1999951009}
+  - component: {fileID: 1999951008}
   m_Layer: 0
   m_Name: House-door_1
   m_TagString: Untagged
@@ -699505,14 +699529,29 @@ Transform:
   m_GameObject: {fileID: 1999951004}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -473, y: 83.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -473, y: 83.3, z: 0}
+  m_LocalScale: {x: 3.6391869, y: 1.4675983, z: 1.1503}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1884044433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1999951006
-BoxCollider2D:
+--- !u!114 &1999951007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999951004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28f34af7c892c9d0aafe806d75211a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  targetPosition: {fileID: 266747691}
+  HintDialogueKey: {fileID: 2097508140}
+  controlSettings: {fileID: 508244362}
+--- !u!58 &1999951008
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -699546,29 +699585,34 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 5, y: 3}
-  m_EdgeRadius: 0
---- !u!114 &1999951007
-MonoBehaviour:
+  m_Radius: 1
+--- !u!50 &1999951009
+Rigidbody2D:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999951004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28f34af7c892c9d0aafe806d75211a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 8
+  m_LinearDamping: 7
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2029569484
 GameObject:
   m_ObjectHideFlags: 0
@@ -700205,6 +700249,7 @@ Transform:
   - {fileID: 1893750058}
   - {fileID: 1563394249}
   - {fileID: 1884044433}
+  - {fileID: 266747691}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097508140
@@ -700219,7 +700264,7 @@ GameObject:
   - component: {fileID: 2097508143}
   - component: {fileID: 2097508142}
   m_Layer: 5
-  m_Name: HintDialogue
+  m_Name: HIntInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
