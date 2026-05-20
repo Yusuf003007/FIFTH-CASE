@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 615f6540d7f86864986a9219866aa582
+guid: f2cf6653dcad1b24eb8f5b51eab01c79
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: detective sleeping _0
+      name: New Piskel_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 306
-        width: 149
-        height: 227
+        x: 28
+        y: 16
+        width: 72
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,118 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b8b1e888502c164fa519b4726f67a6b
-      internalID: -1157738983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: detective sleeping _1
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 306
-        width: 149
-        height: 227
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b490097e2a970045b82e64b34327344
-      internalID: -316435486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: detective sleeping _2
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 306
-        width: 150
-        height: 227
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e28162813db01147995ff05c269d607
-      internalID: 98276619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: detective sleeping _3
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 30
-        width: 149
-        height: 227
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1fe3f23390e1f61449efddc363f639b0
-      internalID: -765849146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: detective sleeping _4
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 30
-        width: 149
-        height: 227
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a21f12e38c2c80498ef30a1581ea2dc
-      internalID: 151886934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: detective sleeping _5
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 31
-        width: 150
-        height: 226
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abccad7b60c7b6240a9ee0683ce930f0
-      internalID: -56728137
+      spriteID: 9197f0097bfe7dd49ab72fd47aa7f092
+      internalID: -1238338016
       vertices: []
       indices: 
       edges: []
@@ -232,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ec45dba12ff3ad64082d8e961de9fc0f
+    spriteID: 1b625de47dbc6614ca9d1113e566fe5a
     internalID: 0
     vertices: []
     indices: 
@@ -244,12 +134,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      detective sleeping _0: -1157738983
-      detective sleeping _1: -316435486
-      detective sleeping _2: 98276619
-      detective sleeping _3: -765849146
-      detective sleeping _4: 151886934
-      detective sleeping _5: -56728137
+      New Piskel_0: -1238338016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
