@@ -155,6 +155,7 @@ public class npcDialogueController : MonoBehaviour {
       Debug.Log("Player entered zone", this.gameObject);
       Debug.Log("Hint dialogue False from collide");
       HintDialogueKey.SetActive(false);
+      dialoguePanel.SetActive(false);
     }
   }
 }
