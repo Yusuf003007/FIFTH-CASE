@@ -152,8 +152,10 @@ public class npcDialogueController : MonoBehaviour {
   private void OnTriggerExit2D(Collider2D other) {
     if (other.CompareTag("Player")) {
       playerIsClose = false;
+      Debug.Log("Player entered zone", this.gameObject);
       Debug.Log("Hint dialogue False from collide");
-      HintDialogueKey.SetActive(true);
+      HintDialogueKey.SetActive(false);
+      dialoguePanel.SetActive(false);
     }
   }
 }

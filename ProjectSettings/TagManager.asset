@@ -50,6 +50,9 @@ TagManager:
   - name: Environment
     uniqueID: 2422634177
     locked: 0
+  - name: props movable
+    uniqueID: 2590930651
+    locked: 0
   - name: Character
     uniqueID: 2710239281
     locked: 0

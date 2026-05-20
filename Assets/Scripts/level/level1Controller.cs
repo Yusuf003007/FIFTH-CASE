@@ -50,8 +50,9 @@ public class level1Controller : MonoBehaviour {
       // Close menu if open
       menu.gameObject.SetActive(false);
 
+      InventoryController.Instance.displayInventory();
       // Toggle inventory
-      inventory.gameObject.SetActive(!inventoryOpen);
+      // inventory.gameObject.SetActive(!inventoryOpen);
     }
 
     // ESCAPE KEY
