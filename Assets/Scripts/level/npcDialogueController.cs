@@ -13,26 +13,41 @@ public class npcDialogueController : MonoBehaviour {
   public Text displayName;
   public Image displayAvatar;
   public GameObject dialoguePanel;
+  public GameObject buttonNext;
+  public GameObject buttonExit;
+
   public Text dialogueText;
   public GameObject HintDialogueKey;
 
   [Header("Dialogue Settings")]
   public DialogueLine[] dialogue;
   public float wordSpeed;
-  public bool playerIsClose = true;
+  public bool playerIsClose = false;
 
   private int index = 0;
   public bool dialogueDone = false;
   public bool npcNotAvailable = true;
   public level1Controller questManager;
+  public entryCinematicDiscussion cinematicEntry;
+
+  [Header("Keybind purpose")]
+  public GameObject controlSettings;
 
   void Start() {
     dialogueText.text = "";
     HintDialogueKey.SetActive(false);
+    // buttonNext.GetComponent<Button>().onClick.RemoveAllListeners();
+    // buttonNext.GetComponent<Button>().onClick.AddListener(NextLine);
+
+    // buttonExit.GetComponent<Button>().onClick.RemoveAllListeners();
+    // buttonExit.GetComponent<Button>().onClick.AddListener(RemoveText);
   }
 
   void Update() {
-    if (Keyboard.current.eKey.wasPressedThisFrame && playerIsClose) {
+    KeyCode inventoryKey = RebindKey.Instance.GetKey("Interact");
+    Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
+    if (Keyboard.current[unityKey].wasPressedThisFrame && playerIsClose &&
+        !controlSettings.gameObject.activeSelf) {
       if (!dialoguePanel.activeInHierarchy) {
         dialoguePanel.SetActive(true);
         HintDialogueKey.SetActive(false);
@@ -43,10 +58,18 @@ public class npcDialogueController : MonoBehaviour {
       }
     }
 
-    if (Keyboard.current.qKey.wasPressedThisFrame &&
-        dialoguePanel.activeInHierarchy) {
-      RemoveText();
-    }
+    // too lazy to add the keybind in the control menu
+    // if (Keyboard.current.qKey.wasPressedThisFrame &&
+    //    dialoguePanel.activeInHierarchy &&
+    //    RebindKey.Instance.waitingForKey == false) {
+    //  RemoveText();
+    //}
+  }
+  public void displayDialogue() {
+    dialoguePanel.SetActive(true);
+    HintDialogueKey.SetActive(false);
+
+    NextLine();
   }
 
   void ShowLine() {
@@ -56,7 +79,7 @@ public class npcDialogueController : MonoBehaviour {
     displayAvatar.sprite = dialogue[index].speakerAvatar;
 
     // Optional: align text depending on speaker
-    if (dialogue[index].speakerName == "Player") {
+    if (dialogue[index].speakerName == "You") {
       dialogueText.alignment = TextAnchor.MiddleRight;
     } else {
       dialogueText.alignment = TextAnchor.MiddleLeft;
@@ -74,6 +97,7 @@ public class npcDialogueController : MonoBehaviour {
   }
 
   public void NextLine() {
+    Debug.Log("Called nextline");
     if (index < dialogue.Length - 1) {
       index++;
       ShowLine();
@@ -87,6 +111,17 @@ public class npcDialogueController : MonoBehaviour {
         }
       }
       RemoveText();
+
+      if (cinematicEntry != null && npcNotAvailable == false) {
+        Debug.Log("IN");
+
+        HintDialogueKey.SetActive(false);
+        dialogueDone = true;
+        playerIsClose = false;
+        playerController2D.Instance.lockPlayer = false;
+
+        cinematicEntry.OnNPCDialogueFinished(this);
+      }
     }
   }
 
@@ -95,6 +130,8 @@ public class npcDialogueController : MonoBehaviour {
     dialogueText.text = "";
     index = 0;
     dialoguePanel.SetActive(false);
+    Debug.Log("Hint dialogue TRUE from remove");
+
     HintDialogueKey.SetActive(true);
   }
 
@@ -106,13 +143,17 @@ public class npcDialogueController : MonoBehaviour {
   }
 
   private void OnTriggerEnter2D(Collider2D other) {
-    playerIsClose = true;
-    HintDialogueKey.SetActive(true);
+    if (other.CompareTag("Player")) {
+      playerIsClose = true;
+      Debug.Log("Hint dialogue TRUE from collide");
+      HintDialogueKey.SetActive(true);
+    }
   }
-
   private void OnTriggerExit2D(Collider2D other) {
-    playerIsClose = false;
-    RemoveText();
-    HintDialogueKey.SetActive(false);
+    if (other.CompareTag("Player")) {
+      playerIsClose = false;
+      Debug.Log("Hint dialogue False from collide");
+      HintDialogueKey.SetActive(true);
+    }
   }
 }

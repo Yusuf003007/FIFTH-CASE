@@ -1,0 +1,46 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/134.0.6998.205 Electron/35.6.0 Safari/537.36" version="26.1.1">
+  <diagram name="Page-1" id="DvM-ZK5GFt_v9WaxRz7H">
+    <mxGraphModel dx="972" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-2" value="Ground&lt;div&gt;(grass, road, ...)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="380" width="60" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-3" value="Wall&lt;div&gt;House&lt;br&gt;&lt;div&gt;Item&lt;/div&gt;&lt;div&gt;Props, ...&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;NPC&lt;/div&gt;&lt;div&gt;Player&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="60" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="309.31" as="sourcePoint" />
+            <mxPoint x="870" y="309.31" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-5" value="[ui]&lt;div&gt;Hint&lt;/div&gt;&lt;div&gt;Quest message&lt;/div&gt;&lt;div&gt;Background panel&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="380" width="110" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-6" value="[ui]&lt;div&gt;Dialogue Panel&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="380" width="110" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-7" value="[ui]&lt;div&gt;Inventory&lt;/div&gt;&lt;div&gt;settings, ...&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="380" width="110" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-8" value="10" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-9" value="20" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="395" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-10" value="30" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-11" value="40" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="68ELzzhy6-Hm_lloJGpC-12" value="50" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="765" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

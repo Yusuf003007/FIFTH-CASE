@@ -6,6 +6,7 @@ public class level1Controller : MonoBehaviour {
   public string playerName = "You";
   public Sprite playerAvatar;
 
+  public npcDialogueController inspectorFriend;
   public npcDialogueController inspector;
   public npcDialogueController policeman1;
   public npcDialogueController policeman2;
@@ -30,7 +31,7 @@ public class level1Controller : MonoBehaviour {
   void Start() {
     questStage = 0;
 
-    questHintPanel.SetActive(true);
+    // questHintPanel.SetActive(true);
     questHintText.text = "Talk to the Inspector";
     HandleQuestProgress();
   }
@@ -68,8 +69,10 @@ public class level1Controller : MonoBehaviour {
     }
 
     // Quest hint visibility
-    questHintPanel.gameObject.SetActive(!menu.gameObject.activeSelf &&
-                                        !inventory.gameObject.activeSelf);
+    if (inspectorFriend.dialogueDone) {
+      questHintPanel.gameObject.SetActive(!menu.gameObject.activeSelf &&
+                                          !inventory.gameObject.activeSelf);
+    }
   }
   public void displaySettings() {
 

@@ -1,4 +1,5 @@
 using TMPro;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
@@ -6,15 +7,26 @@ using System.Collections.Generic;
 public class RebindKey : MonoBehaviour {
 
   public static RebindKey Instance;
-  public string action;           // the action of the key
-  private KeyCode key;            // the key
-  public TextMeshProUGUI keyText; // where to display the key
+
+  [Header("Display")]
+  public TextMeshProUGUI keyText;   // where to display the key
+  public GameObject messageKeyUsed; // where to display the key
+
+  [Header("Backend")]
+  public string action; // the action of the key
+  public InputActionReference moveAction;
   private bool waitingForKey = false;
+
+  private KeyCode key; // the key
 
   void Start() {
     string[] actionList =
         new string[] { "MoveUp",   "MoveDown",  "MoveLeft", "MoveRight",
                        "Interact", "Inventory", "PauseMenu" };
+    // moveAction.action.ApplyBindingOverride(1, "<Keyboard>/w");
+    // moveAction.action.ApplyBindingOverride(2, "<Keyboard>/s");
+    // moveAction.action.ApplyBindingOverride(3, "<Keyboard>/a");
+    // moveAction.action.ApplyBindingOverride(4, "<Keyboard>/d");
 
     // if (PlayerPrefs.GetString("bleh", "None") == "None") {
     //  //Debug.Log("condition work");
@@ -30,13 +42,20 @@ public class RebindKey : MonoBehaviour {
           case "MoveUp":
             setKey(i, KeyCode.W);
             key = GetKey(i);
+            // moveAction.action.ApplyBindingOverride(1, "<Keyboard>/w");
+            StartCoroutine(ApplyRebind(moveAction, key));
+
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
 
           case "MoveDown":
             setKey(i, KeyCode.S);
+
+            // moveAction.action.ApplyBindingOverride(2, "<Keyboard>/s");
             key = GetKey(i);
+            StartCoroutine(ApplyRebind(moveAction, key));
+
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
@@ -44,13 +63,20 @@ public class RebindKey : MonoBehaviour {
           case "MoveLeft":
             setKey(i, KeyCode.A);
             key = GetKey(i);
+
+            // moveAction.action.ApplyBindingOverride(3, "<Keyboard>/a");
+            StartCoroutine(ApplyRebind(moveAction, key));
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
 
           case "MoveRight":
             setKey(i, KeyCode.D);
+
+            // moveAction.action.ApplyBindingOverride(4, "<Keyboard>/d");
             key = GetKey(i);
+
+            StartCoroutine(ApplyRebind(moveAction, key));
             // Debug.Log("Default Value assigned" + i + " = " + key);
 
             break;
@@ -92,13 +118,77 @@ public class RebindKey : MonoBehaviour {
         if (checkKey(action, e.keyCode)) {
           key = e.keyCode;
           waitingForKey = false;
+          Debug.Log("Done");
+          List<string> movementAction =
+              new List<string> { "MoveUp", "MoveDown", "MoveLeft",
+                                 "MoveRight" };
+
+          foreach (string i in movementAction) {
+            if (action == i) {
+
+              StartCoroutine(ApplyRebind(moveAction, key));
+            }
+          }
           UpdateKeyText(key);
           setKey(action, key);
-        } else {
-          // Debug.Log(e.keyCode + " is already in use!");
         }
       }
+
+    } else {
+      // Debug.Log(e.keyCode + " is already in use!");
     }
+  }
+  private IEnumerator ApplyRebind(InputActionReference moveAction,
+                                  KeyCode key) {
+    yield return null;
+
+    string keyBind = key.ToString().ToLower();
+    string keySetup = $"<Keyboard>/{keyBind}";
+
+    Dictionary<string, int> bindingIndexMap = new Dictionary<string, int> {
+      { "MoveUp", 1 }, { "MoveDown", 2 }, { "MoveLeft", 3 }, { "MoveRight", 4 }
+    };
+
+    if (bindingIndexMap.TryGetValue(action, out int bindingIndex)) {
+      moveAction.action.Disable(); // ← disable first
+      moveAction.action.ApplyBindingOverride(bindingIndex, keySetup);
+      moveAction.action.Enable(); // ← re-enable after
+      Debug.Log($"Rebound {action} (index {bindingIndex}) to {keySetup}");
+    }
+  }
+  void setMovementKey(string action, KeyCode key,
+                      InputActionReference moveAction) {
+    string keyBind = key.ToString().ToLower();
+    string keySetup = $"<Keyboard>/{keyBind}";
+
+    int id = 99;
+    switch (action) {
+    case "MoveUp":
+      // code block
+      id = 1;
+      break;
+    case "MoveDown":
+      id = 2;
+      break;
+    case "MoveLeft":
+      id = 3;
+      break;
+    case "MoveRight":
+      id = 4;
+      break;
+    default:
+      // code block
+      break;
+    }
+    //    Dictionary<string, int> bindingIndex = new() {
+    //      { "MoveUp", 0 }, { "MoveDown", 1 }, { "MoveLeft", 2 }, {
+    //      "MoveRight", 3 }
+    //    };
+
+    Debug.Log("KeySetup =" + id + keySetup);
+    moveAction.action.ApplyBindingOverride(id, keySetup);
+    // moveAction.action.ApplyBindingOverride(bindingIndex[action],
+    //                                       $"<Keyboard>/{key}");
   }
 
   public void StartRebind() {
@@ -117,10 +207,17 @@ public class RebindKey : MonoBehaviour {
     foreach (string i in actionList) {
       if (currentKey == GetKey(i)) {
 
+        StartCoroutine(ShowMessageForSeconds(5f));
         return false;
       }
     }
     return true;
+  }
+
+  private IEnumerator ShowMessageForSeconds(float duration) {
+    messageKeyUsed.SetActive(true);
+    yield return new WaitForSeconds(duration);
+    messageKeyUsed.SetActive(false);
   }
 
   public KeyCode GetKey(string action) {
