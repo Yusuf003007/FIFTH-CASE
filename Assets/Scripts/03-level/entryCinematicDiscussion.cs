@@ -11,35 +11,35 @@ public class entryCinematicDiscussion : MonoBehaviour {
   public Sprite playerAvatar;
   public npcDialogueController friendInspector;
 
-  private void Awake() {
-    director = GetComponent<PlayableDirector>();
-    director.played += Director_Played;
-    director.stopped += Director_Stopped;
-  }
+  // private void Awake() {
+  //   director = GetComponent<PlayableDirector>();
+  //   director.played += Director_Played;
+  //   director.stopped += Director_Stopped;
+  // }
 
-  private void Director_Stopped(PlayableDirector obj) {
-    controlPanel.SetActive(true);
-  }
+  // private void Director_Stopped(PlayableDirector obj) {
+  //   controlPanel.SetActive(true);
+  // }
 
-  private void Director_Played(PlayableDirector obj) {
-    controlPanel.SetActive(false);
-  }
+  // private void Director_Played(PlayableDirector obj) {
+  //   controlPanel.SetActive(false);
+  // }
 
-  public void StartTimeline() { director.Play(); }
+  // public void StartTimeline() { director.Play(); }
 
-  // PAUSE TIMELINE
-  public void PauseTimeline() {
-    director.Pause();
+  // // PAUSE TIMELINE
+  // public void PauseTimeline() {
+  //   director.Pause();
 
-    Debug.Log("Timeline Paused");
-  }
+  //   Debug.Log("Timeline Paused");
+  // }
 
-  // RESUME TIMELINE
-  public void ResumeTimeline() {
-    director.Resume();
+  // // RESUME TIMELINE
+  // public void ResumeTimeline() {
+  //   director.Resume();
 
-    Debug.Log("Timeline Resumed");
-  }
+  //   Debug.Log("Timeline Resumed");
+  // }
   public void SpawnEnemy() { Debug.Log("Enemy Spawned!"); }
 
   public void startEntryDiscussion(npcDialogueController npc) {
