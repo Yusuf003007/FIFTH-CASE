@@ -63,89 +63,44 @@ public class FirstCinematicDiscussion : MonoBehaviour {
 
   private void entryDiscussion(npcDialogueController npc) {
     Debug.Log("called entryDiscussion");
-
     DialogueLine[] conversation = new DialogueLine[] {
-
       new DialogueLine {
         speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text = "Glad you came. I know you’re retired, but I wouldn’t have " +
-               "called if this case didn’t feel strange."
+        text = "I'm glad you picked up. I wouldn't have called if I didn't " +
+               "need you on this one."
       },
-
+      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
+                         text = "It's been a while. What's going on?" },
+      new DialogueLine {
+        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
+        text =
+            "We've got a body. Middle-aged man, found dead inside his home. " +
+            "Something about it doesn't sit right with me."
+      },
+      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
+                         text = "You've got a full team. Why call me?" },
+      new DialogueLine {
+        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
+        text = "Because I trust your eyes more than anyone else's. " +
+               "You always saw things the rest of us missed."
+      },
+      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
+                         text = "I'm retired, you know that." },
+      new DialogueLine {
+        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
+        text = "I know. And I wouldn't be asking if I had another option. " +
+               "Just come take a look. That's all I'm asking."
+      },
+      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
+                         text = "..." },
       new DialogueLine {
         speakerName = playerName, speakerAvatar = playerAvatar,
-        text = "You said very little on the phone. What exactly happened?"
+        text = "Alright. Send me the address. I'll head over now."
       },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text =
-            "Victim’s a middle-aged man. Found dead inside his own house. " +
-            "Body’s still in the living room where patrol first discovered him."
-      },
-
-      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
-                         text = "Any idea on cause of death?" },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text = "Not yet. Coroner hasn’t arrived. We only secured the scene " +
-               "a little while ago."
-      },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text =
-            "There are already officers inside keeping the place locked down."
-      },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text = "And... one of our inspectors is not exactly happy you’re here."
-      },
-
-      new DialogueLine {
-        speakerName = playerName, speakerAvatar = playerAvatar,
-        text =
-            "Let me guess. Thinks a retired inspector will just get in the way?"
-      },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text = "Something like that. He’s good at his job, just a bit grumpy " +
-               "and territorial."
-      },
-
-      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
-                         text =
-                             "I didn’t come here to step on anyone’s shoes." },
-
       new DialogueLine { speakerName = npc.npcName,
                          speakerAvatar = npc.npcAvatar,
-                         text = "I know. That’s why I called you." },
-
-      new DialogueLine { speakerName = playerName, speakerAvatar = playerAvatar,
-                         text = "Anyone see what happened?" },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text = "We have one witness. Neighbor says they heard shouting earlier."
-      },
-
-      new DialogueLine {
-        speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text =
-            "Witness should still be at their house nearby. You can question " +
-            "them whenever you’re ready."
-      },
-
-      new DialogueLine {
-        speakerName = playerName, speakerAvatar = playerAvatar,
-        text = "Alright. First I’ll take a look at the scene, then I’ll have " +
-               "a talk with this witness."
-      }
+                         text = "Thank you. I'll be waiting at the scene." },
     };
-
     npc.SetDialogue(conversation);
   }
 }
