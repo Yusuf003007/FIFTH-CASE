@@ -45,15 +45,23 @@ public class npcDialogueController : MonoBehaviour {
   }
 
   void Update() {
+    // if (Keyboard.current[Key.E].wasPressedThisFrame) {
+    //   Debug.Log("E key pressed");
+    // }
     KeyCode inventoryKey = RebindKey.Instance.GetKey("Interact");
     Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
     if (Keyboard.current[unityKey].wasPressedThisFrame && playerIsClose &&
         !controlSettings.gameObject.activeSelf) {
+
+      // if (playerIsClose) {
+      Debug.Log("E key pressed");
+
       if (!dialoguePanel.activeInHierarchy) {
         dialoguePanel.SetActive(true);
         if (HintDialogueKey != null) {
           HintDialogueKey.SetActive(false);
         }
+        Debug.Log("will call showline");
 
         ShowLine();
       } else if (dialogueText.text == dialogue[index].text) {
@@ -128,6 +136,14 @@ public class npcDialogueController : MonoBehaviour {
         playerController2D.Instance.lockPlayer = false;
 
         cinematicEntry.OnNPCDialogueFinished(this);
+      }
+      if (cinematic1 != null) {
+
+        Debug.Log("IN");
+        dialogueDone = true;
+        playerIsClose = false;
+
+        cinematic1.OnNPCDialogueFinished(this);
       }
     }
   }

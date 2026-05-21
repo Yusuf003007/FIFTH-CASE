@@ -3293,11 +3293,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 569918695}
           m_TargetAssemblyTypeName: FirstCinematicDiscussion, Assembly-CSharp
-          m_MethodName: SpawnEnemy
-          m_Mode: 1
+          m_MethodName: startEntryDiscussion
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 879907080}
+            m_ObjectArgumentAssemblyTypeName: npcDialogueController, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -4628,7 +4628,6 @@ GameObject:
   m_Component:
   - component: {fileID: 758959030}
   - component: {fileID: 758959029}
-  - component: {fileID: 758959028}
   - component: {fileID: 758959027}
   - component: {fileID: 758959026}
   m_Layer: 0
@@ -4668,23 +4667,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrightnessManager
   brightnessOverlay: {fileID: 1332932019}
   brightnessSlider: {fileID: 1382808628}
---- !u!114 &758959028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758959025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f91108b54fc95e34bb0864c0a3f196de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  musicSource: {fileID: 0}
-  sfxSource: {fileID: 0}
-  masterSlider: {fileID: 536767987}
-  musicSlider: {fileID: 1216497426}
-  sfxSlider: {fileID: 40471285}
 --- !u!114 &758959029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5734,8 +5716,6 @@ MonoBehaviour:
   displayName: {fileID: 218763676}
   displayAvatar: {fileID: 301111374}
   dialoguePanel: {fileID: 1286200617}
-  buttonNext: {fileID: 0}
-  buttonExit: {fileID: 0}
   dialogueText: {fileID: 1095561962}
   HintDialogueKey: {fileID: 0}
   dialogue: []
@@ -5745,7 +5725,8 @@ MonoBehaviour:
   npcNotAvailable: 0
   questManager: {fileID: 0}
   cinematicEntry: {fileID: 0}
-  controlSettings: {fileID: 758959025}
+  cinematic1: {fileID: 569918695}
+  controlSettings: {fileID: 1953045359}
 --- !u!70 &879907081
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class FirstCinematicDiscussion : MonoBehaviour {
   // public GameObject questHintPanel;
@@ -56,8 +57,8 @@ public class FirstCinematicDiscussion : MonoBehaviour {
     npc.playerIsClose = false;
 
     Debug.Log(npc.npcName +
-              " finished dialogue, playerisClose =" + npc.playerIsClose +
-              "lock =" + playerController2D.Instance.lockPlayer);
+              " finished dialogue, playerisClose =" + npc.playerIsClose);
+    SceneManager.LoadScene("level-1");
   }
 
   private void entryDiscussion(npcDialogueController npc) {
