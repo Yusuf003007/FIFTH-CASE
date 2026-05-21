@@ -13,8 +13,6 @@ public class npcDialogueController : MonoBehaviour {
   public Text displayName;
   public Image displayAvatar;
   public GameObject dialoguePanel;
-  public GameObject buttonNext;
-  public GameObject buttonExit;
 
   public Text dialogueText;
   public GameObject HintDialogueKey;
@@ -29,13 +27,16 @@ public class npcDialogueController : MonoBehaviour {
   public bool npcNotAvailable = true;
   public level1Controller questManager;
   public entryCinematicDiscussion cinematicEntry;
+  public FirstCinematicDiscussion cinematic1;
 
   [Header("Keybind purpose")]
   public GameObject controlSettings;
 
   void Start() {
     dialogueText.text = "";
-    HintDialogueKey.SetActive(false);
+    if (HintDialogueKey != null) {
+      HintDialogueKey.SetActive(false);
+    }
     // buttonNext.GetComponent<Button>().onClick.RemoveAllListeners();
     // buttonNext.GetComponent<Button>().onClick.AddListener(NextLine);
 
@@ -50,7 +51,9 @@ public class npcDialogueController : MonoBehaviour {
         !controlSettings.gameObject.activeSelf) {
       if (!dialoguePanel.activeInHierarchy) {
         dialoguePanel.SetActive(true);
-        HintDialogueKey.SetActive(false);
+        if (HintDialogueKey != null) {
+          HintDialogueKey.SetActive(false);
+        }
 
         ShowLine();
       } else if (dialogueText.text == dialogue[index].text) {
@@ -67,7 +70,9 @@ public class npcDialogueController : MonoBehaviour {
   }
   public void displayDialogue() {
     dialoguePanel.SetActive(true);
-    HintDialogueKey.SetActive(false);
+    if (HintDialogueKey != null) {
+      HintDialogueKey.SetActive(false);
+    }
 
     NextLine();
   }
@@ -115,7 +120,9 @@ public class npcDialogueController : MonoBehaviour {
       if (cinematicEntry != null && npcNotAvailable == false) {
         Debug.Log("IN");
 
-        HintDialogueKey.SetActive(false);
+        if (HintDialogueKey != null) {
+          HintDialogueKey.SetActive(false);
+        }
         dialogueDone = true;
         playerIsClose = false;
         playerController2D.Instance.lockPlayer = false;
@@ -131,8 +138,9 @@ public class npcDialogueController : MonoBehaviour {
     index = 0;
     dialoguePanel.SetActive(false);
     Debug.Log("Hint dialogue TRUE from remove");
-
-    HintDialogueKey.SetActive(true);
+    if (HintDialogueKey != null) {
+      HintDialogueKey.SetActive(true);
+    }
   }
 
   public void SetDialogue(DialogueLine[] newDialogue) {
@@ -146,7 +154,10 @@ public class npcDialogueController : MonoBehaviour {
     if (other.CompareTag("Player")) {
       playerIsClose = true;
       Debug.Log("Hint dialogue TRUE from collide");
-      HintDialogueKey.SetActive(true);
+
+      if (HintDialogueKey != null) {
+        HintDialogueKey.SetActive(true);
+      }
     }
   }
   private void OnTriggerExit2D(Collider2D other) {
@@ -154,7 +165,10 @@ public class npcDialogueController : MonoBehaviour {
       playerIsClose = false;
       Debug.Log("Player entered zone", this.gameObject);
       Debug.Log("Hint dialogue False from collide");
-      HintDialogueKey.SetActive(false);
+
+      if (HintDialogueKey != null) {
+        HintDialogueKey.SetActive(false);
+      }
       dialoguePanel.SetActive(false);
     }
   }

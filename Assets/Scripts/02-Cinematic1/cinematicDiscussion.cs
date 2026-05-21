@@ -3,9 +3,9 @@ using UnityEngine.Playables;
 using System.Collections;
 
 public class FirstCinematicDiscussion : MonoBehaviour {
-  public GameObject questHintPanel;
+  // public GameObject questHintPanel;
 
-  public GameObject controlPanel;
+  // public GameObject controlPanel;
   public PlayableDirector director;
   public string playerName = "You";
   public Sprite playerAvatar;
@@ -40,25 +40,24 @@ public class FirstCinematicDiscussion : MonoBehaviour {
 
   //   Debug.Log("Timeline Resumed");
   // }
+
   public void SpawnEnemy() { Debug.Log("Enemy Spawned!"); }
 
   public void startEntryDiscussion(npcDialogueController npc) {
-    playerController2D.Instance.lockPlayer = true;
     npc.playerIsClose = true;
+
+    Debug.Log("called entryDiscussion");
 
     entryDiscussion(friendInspector);
     npc.displayDialogue();
   }
 
   public void OnNPCDialogueFinished(npcDialogueController npc) {
-    playerController2D.Instance.lockPlayer = false;
     npc.playerIsClose = false;
 
     Debug.Log(npc.npcName +
               " finished dialogue, playerisClose =" + npc.playerIsClose +
               "lock =" + playerController2D.Instance.lockPlayer);
-
-    questHintPanel.SetActive(true);
   }
 
   private void entryDiscussion(npcDialogueController npc) {
