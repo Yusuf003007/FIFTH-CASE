@@ -31,6 +31,7 @@ public class npcDialogueController : MonoBehaviour {
 
   [Header("Keybind purpose")]
   public GameObject controlSettings;
+  // public RebindKey rebindKey;
 
   void Start() {
     dialogueText.text = "";
@@ -48,6 +49,11 @@ public class npcDialogueController : MonoBehaviour {
     // if (Keyboard.current[Key.E].wasPressedThisFrame) {
     //   Debug.Log("E key pressed");
     // }
+    // KeyCode inventoryKey = rebindKey.GetKey("Interact");
+    // Key unityKey = (Key)System.Enum.Parse(typeof(Key),
+    // inventoryKey.ToString());
+    // Debug.Log(" key pressed" + unityKey);
+
     KeyCode inventoryKey = RebindKey.Instance.GetKey("Interact");
     Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
     if (Keyboard.current[unityKey].wasPressedThisFrame && playerIsClose &&

@@ -3749,6 +3749,8 @@ PlayableDirector:
     value: {fileID: 2035415584}
   - key: {fileID: 6858989786906987381, guid: 88b4190c81cc5874cb975805ac4b515a, type: 2}
     value: {fileID: 569918696}
+  - key: {fileID: -5315653010569800154, guid: 88b4190c81cc5874cb975805ac4b515a, type: 2}
+    value: {fileID: 569918696}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &621678815
@@ -4629,7 +4631,7 @@ GameObject:
   - component: {fileID: 758959030}
   - component: {fileID: 758959029}
   - component: {fileID: 758959027}
-  - component: {fileID: 758959026}
+  - component: {fileID: 758959031}
   m_Layer: 0
   m_Name: gameSettings
   m_TagString: Untagged
@@ -4637,22 +4639,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &758959026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758959025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  keyText: {fileID: 521260174}
-  messageKeyUsed: {fileID: 0}
-  action: 
-  moveAction: {fileID: 0}
 --- !u!114 &758959027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4700,6 +4686,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758959031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758959025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RebindKey
+  keyText: {fileID: 0}
+  messageKeyUsed: {fileID: 0}
+  action: 
+  moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
 --- !u!1 &767088576
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,6 +5680,7 @@ GameObject:
   - component: {fileID: 879907082}
   - component: {fileID: 879907081}
   - component: {fileID: 879907080}
+  - component: {fileID: 879907086}
   m_Layer: 0
   m_Name: NPC_inspector_friend
   m_TagString: Untagged
@@ -5717,7 +5721,7 @@ MonoBehaviour:
   displayAvatar: {fileID: 301111374}
   dialoguePanel: {fileID: 1286200617}
   dialogueText: {fileID: 1095561962}
-  HintDialogueKey: {fileID: 0}
+  HintDialogueKey: {fileID: 809702960}
   dialogue: []
   wordSpeed: 0
   playerIsClose: 0
@@ -5908,6 +5912,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &879907086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879907078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RebindKey
+  keyText: {fileID: 0}
+  messageKeyUsed: {fileID: 0}
+  action: 
+  moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
 --- !u!1 &888048981
 GameObject:
   m_ObjectHideFlags: 0
@@ -7375,7 +7396,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1 &1079776636
 GameObject:
