@@ -82,7 +82,8 @@ public class npcDialogueController : MonoBehaviour {
       HintDialogueKey.SetActive(false);
     }
 
-    NextLine();
+    ShowLine();
+    // NextLine();
   }
 
   void ShowLine() {
@@ -133,7 +134,7 @@ public class npcDialogueController : MonoBehaviour {
         }
         dialogueDone = true;
         playerIsClose = false;
-        playerController2D.Instance.lockPlayer = false;
+        // playerController2D.Instance.lockPlayer = false;
 
         cinematicEntry.OnNPCDialogueFinished(this);
       }
