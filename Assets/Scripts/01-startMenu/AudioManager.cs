@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour {
+  // private AudioVolumeLogic _logic = new AudioVolumeLogic();
+
   public AudioSource musicSource;
   public AudioSource sfxSource;
 
