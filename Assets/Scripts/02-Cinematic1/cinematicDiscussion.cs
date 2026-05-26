@@ -99,7 +99,7 @@ public class FirstCinematicDiscussion : MonoBehaviour {
       },
       new DialogueLine { speakerName = npc.npcName,
                          speakerAvatar = npc.npcAvatar,
-                         text = "Thank you. I'll be waiting at the scene." },
+                         text = "Thank you. I'll call when you will be there" },
     };
     npc.SetDialogue(conversation);
   }

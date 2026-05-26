@@ -138,7 +138,7 @@ public class entryCinematicDiscussion : MonoBehaviour {
 
       new DialogueLine {
         speakerName = npc.npcName, speakerAvatar = npc.npcAvatar,
-        text = "We have one witness. Neighbor says they heard shouting earlier."
+        text = "We have one witness. Neighbor says they heard nothings."
       },
 
       new DialogueLine {
