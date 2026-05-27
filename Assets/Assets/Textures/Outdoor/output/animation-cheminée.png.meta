@@ -113,12 +113,12 @@ TextureImporter:
       name: "animation-chemin\xE9e_0"
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 133
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 71
+        y: 34
+        width: 111
+        height: 128
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -135,12 +135,12 @@ TextureImporter:
       name: "animation-chemin\xE9e_1"
       rect:
         serializedVersion: 2
-        x: 182
-        y: 0
-        width: 133
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 203
+        y: 34
+        width: 111
+        height: 128
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,12 +157,12 @@ TextureImporter:
       name: "animation-chemin\xE9e_2"
       rect:
         serializedVersion: 2
-        x: 315
-        y: 0
-        width: 133
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 333
+        y: 34
+        width: 111
+        height: 128
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,12 +179,12 @@ TextureImporter:
       name: "animation-chemin\xE9e_3"
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 133
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 466
+        y: 34
+        width: 111
+        height: 128
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,12 +201,12 @@ TextureImporter:
       name: "animation-chemin\xE9e_4"
       rect:
         serializedVersion: 2
-        x: 581
-        y: 0
-        width: 133
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 597
+        y: 34
+        width: 111
+        height: 128
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: "animation-chemin\xE9e_5"
       rect:
         serializedVersion: 2
-        x: 714
-        y: 0
-        width: 133
-        height: 176
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 729
+        y: 34
+        width: 111
+        height: 128
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
