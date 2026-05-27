@@ -3270,8 +3270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstCinematicDiscussion
   director: {fileID: 621678814}
   playerName: You
-  playerAvatar: {fileID: -95762464252584714, guid: 7b9140bdd65cfe54d86df0e447ab6137,
-    type: 3}
+  playerAvatar: {fileID: -963695772, guid: 203220b5ab583426dbc7823b8531cc1a, type: 3}
   friendInspector: {fileID: 879907080}
 --- !u!114 &569918696
 MonoBehaviour:
@@ -11659,12 +11658,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -316435486, guid: 615f6540d7f86864986a9219866aa582, type: 3}
+  m_Sprite: {fileID: 308747025, guid: 203220b5ab583426dbc7823b8531cc1a, type: 3}
   m_Color: {r: 0.24705884, g: 0.24705884, b: 0.24313727, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.1640625, y: 1.7734375}
+  m_Size: {x: 1.58, y: 2.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15487,7 +15486,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1829909920, guid: 7dd1a385b576e6c48b64bdcbd9641e06, type: 3}
+  m_Sprite: {fileID: -320021540, guid: 203220b5ab583426dbc7823b8531cc1a, type: 3}
   m_Color: {r: 0.49411768, g: 0.49411768, b: 0.49411768, a: 1}
   m_FlipX: 0
   m_FlipY: 0
