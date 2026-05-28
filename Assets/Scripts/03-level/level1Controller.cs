@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
+
 using UnityEngine.InputSystem; // for player key press
 
 public class level1Controller : MonoBehaviour {
@@ -24,6 +26,12 @@ public class level1Controller : MonoBehaviour {
   [Header("Progress")]
   public int questStage = 0;
 
+  [Header("Cinematic 2")]
+
+  public PlayableDirector cinematic2;
+  public GameObject fadePanel;
+  public GameObject doorHouseWitness;
+
   //[Header("Key binding")]
   // public RebindKey inventoryKeybind;
   // public RebindKey menuKeybind;
@@ -31,13 +39,16 @@ public class level1Controller : MonoBehaviour {
   void Start() {
     questStage = 0;
 
+    fadePanel.SetActive(false);
     // questHintPanel.SetActive(true);
+
     questHintText.text = "Talk to the Inspector";
     HandleQuestProgress();
   }
 
   void Update() {
     // INVENTORY KEY
+    // HandleQuestProgress();
 
     KeyCode inventoryKey = RebindKey.Instance.GetKey("Inventory");
     Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
@@ -132,6 +143,18 @@ public class level1Controller : MonoBehaviour {
     if (questStage == 2) {
       questHintText.text = "Talk to the Witness";
       TalkToWitness();
+      if (witness.dialogueDone == true) {
+        questStage = 3;
+      }
+    }
+    if (questStage == 3) {
+      questHintPanel.SetActive(false); // SetActive is a METHOD, use () not =
+
+      if (cinematic2 != null) {
+        fadePanel.SetActive(true);
+        doorHouseWitness.SetActive(false);
+        cinematic2.Play();
+      }
     }
   }
 

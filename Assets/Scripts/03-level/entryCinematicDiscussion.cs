@@ -10,6 +10,7 @@ public class entryCinematicDiscussion : MonoBehaviour {
   public string playerName = "You";
   public Sprite playerAvatar;
   public npcDialogueController friendInspector;
+  public playerController2D playerController;
 
   // private void Awake() {
   //   director = GetComponent<PlayableDirector>();
@@ -43,16 +44,24 @@ public class entryCinematicDiscussion : MonoBehaviour {
   public void SpawnEnemy() { Debug.Log("Enemy Spawned!"); }
 
   public void startEntryDiscussion(npcDialogueController npc) {
-    playerController2D.Instance.lockPlayer = true;
+    Debug.Log("Start entry discussion");
+
+    // playerController2D.Instance.lockPlayer = true;
+    playerController.lockPlayer = true;
     npc.playerIsClose = true;
+    Debug.Log(npc.npcName +
+              " start dialogue, playerisClose =" + npc.playerIsClose +
+              "lock =" + playerController2D.Instance.lockPlayer);
 
     entryDiscussion(friendInspector);
     npc.displayDialogue();
   }
 
   public void OnNPCDialogueFinished(npcDialogueController npc) {
-    playerController2D.Instance.lockPlayer = false;
+    // playerController2D.Instance.lockPlayer = false;
+
     npc.playerIsClose = false;
+    playerController.lockPlayer = false;
 
     Debug.Log(npc.npcName +
               " finished dialogue, playerisClose =" + npc.playerIsClose +

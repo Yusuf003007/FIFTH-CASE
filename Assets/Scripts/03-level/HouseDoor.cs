@@ -31,7 +31,7 @@ public class HouseDoor : MonoBehaviour {
       Key unityKey =
           (Key)System.Enum.Parse(typeof(Key), interactKey.ToString());
       HintInteract.GetComponentInChildren<TextMeshProUGUI>().text =
-          "Press" + interactKey + "to open the door.";
+          "Press '" + interactKey + "' to open the door.";
     }
   }
 
