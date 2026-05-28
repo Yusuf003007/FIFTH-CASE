@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.Playables;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class HouseDoor : MonoBehaviour {
 
@@ -67,16 +69,24 @@ public class HouseDoor : MonoBehaviour {
     SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
 
     Color c = playerSprite.color;
+    c.a = 0f;
+    playerSprite.color = c;
+
     yield return null;
     if (door != null) {
       door.SetActive(true);
       // Hide player (instead of SetActive false)
-      c.a = 0f;
-      playerSprite.color = c;
       yield return new WaitForSeconds(2f);
     }
-
     cutScenePanel.SetActive(true);
+
+    TimelineAsset timeline = (TimelineAsset)cutsceneTimeline.playableAsset;
+    foreach (var track in timeline.GetOutputTracks()) {
+      if (track is SignalTrack)
+        cutsceneTimeline.SetGenericBinding(
+            track, this.gameObject.GetComponent<SignalReceiver>());
+    }
+
     // play cutscene
     cutsceneTimeline.Play();
 
