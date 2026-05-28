@@ -48,7 +48,7 @@ public class level1Controller : MonoBehaviour {
 
   void Update() {
     // INVENTORY KEY
-    HandleQuestProgress();
+    // HandleQuestProgress();
 
     KeyCode inventoryKey = RebindKey.Instance.GetKey("Inventory");
     Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
