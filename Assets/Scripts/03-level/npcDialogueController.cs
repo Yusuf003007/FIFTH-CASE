@@ -57,7 +57,6 @@ public class npcDialogueController : MonoBehaviour {
 
     KeyCode inventoryKey = RebindKey.Instance.GetKey("Interact");
     Key unityKey = (Key)System.Enum.Parse(typeof(Key), inventoryKey.ToString());
-    Debug.Log(unityKey);
 
     if (Keyboard.current[unityKey].wasPressedThisFrame && playerIsClose &&
         !controlSettings.gameObject.activeSelf) {
