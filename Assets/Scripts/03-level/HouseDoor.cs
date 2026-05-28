@@ -12,9 +12,12 @@ public class HouseDoor : MonoBehaviour {
   public GameObject HintInteract;
   private bool isPlayerInZone = false;
   private Transform player;
+  public Transform cameraTarget; // drag your camera or camera target here
 
   [Header("CutScene")]
   public GameObject cutScenePanel;
+  [Header("Outside related")]
+  public GameObject door;
 
   public PlayableDirector cutsceneTimeline;
   [Header("Keybind purpose")]
@@ -60,35 +63,52 @@ public class HouseDoor : MonoBehaviour {
 
   private IEnumerator TeleportRoutine() {
 
-    // enable camera script after delay
-    // GameObject.FindWithTag("MainCamera").GetComponent<cameraFollow>().enabled
-    // =
-    //    false;
+    // Store the renderer once at the top of the coroutine
+    SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
 
+    Color c = playerSprite.color;
     yield return null;
+    if (door != null) {
+      door.SetActive(true);
+      // Hide player (instead of SetActive false)
+      c.a = 0f;
+      playerSprite.color = c;
+      yield return new WaitForSeconds(2f);
+    }
 
-    TeleportPlayer();
     cutScenePanel.SetActive(true);
     // play cutscene
     cutsceneTimeline.Play();
 
     // wait for it to finish
+    // TeleportPlayer();
+
     yield return new WaitForSeconds((float)cutsceneTimeline.duration);
+
     cutScenePanel.SetActive(false);
 
-    // yield return new WaitForSeconds(1f); // wait 1 second
-
-    // enable camera script after delay
-    // GameObject.FindWithTag("MainCamera").GetComponent<cameraFollow>().enabled
-    // =
-    //    true;
+    // Show player again
+    c = playerSprite.color;
+    c.a = 1f;
+    playerSprite.color = c;
+    if (door != null) {
+      door.SetActive(false);
+    }
   }
-  private void TeleportPlayer() {
+  public void TeleportPlayer() {
     if (player != null && targetPosition != null) {
       isPlayerInZone = false;
       HintInteract.SetActive(false);
 
       player.position = targetPosition.position;
     }
+  }
+
+  public void TeleportCamera() {
+
+    Transform cameraTransform = Camera.main.transform;
+    cameraTransform.position =
+        new Vector3(targetPosition.position.x, targetPosition.position.y,
+                    cameraTransform.position.z);
   }
 }
