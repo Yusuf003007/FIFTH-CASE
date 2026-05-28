@@ -4363,7 +4363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RebindKey
   keyText: {fileID: 0}
   messageKeyUsed: {fileID: 0}
-  action: 
+  action: somethings
   moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
     type: 3}
 --- !u!1 &767088576
@@ -5343,7 +5343,6 @@ GameObject:
   - component: {fileID: 879907082}
   - component: {fileID: 879907081}
   - component: {fileID: 879907080}
-  - component: {fileID: 879907086}
   m_Layer: 0
   m_Name: NPC_inspector_friend
   m_TagString: Untagged
@@ -5393,7 +5392,7 @@ MonoBehaviour:
   questManager: {fileID: 0}
   cinematicEntry: {fileID: 0}
   cinematic1: {fileID: 569918695}
-  controlSettings: {fileID: 879907078}
+  controlSettings: {fileID: 758959025}
 --- !u!70 &879907081
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5575,23 +5574,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &879907086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879907078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67db3ee3e4031642a45cf51d64ea2d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RebindKey
-  keyText: {fileID: 0}
-  messageKeyUsed: {fileID: 0}
-  action: 
-  moveAction: {fileID: -3552364970006637457, guid: 4419d82f33d36e848b3ed5af4c8da37e,
-    type: 3}
 --- !u!1 &888048981
 GameObject:
   m_ObjectHideFlags: 0
