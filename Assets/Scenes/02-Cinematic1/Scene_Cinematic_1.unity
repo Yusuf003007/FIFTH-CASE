@@ -5392,7 +5392,7 @@ MonoBehaviour:
   questManager: {fileID: 0}
   cinematicEntry: {fileID: 0}
   cinematic1: {fileID: 569918695}
-  controlSettings: {fileID: 758959025}
+  controlSettings: {fileID: 1953045359}
 --- !u!70 &879907081
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
